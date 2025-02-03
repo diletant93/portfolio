@@ -1,0 +1,11 @@
+1) when we set an item to the local storage, especially
+the theme for the mode , we save it as a json string , so we 
+get "dark"  and when we are trying to retrieve it we 
+get into the class : ""dark"" that's why it doesnt work
+Check if we can fix this without the additional removeTheQuotes utill function
+
+
+2) we need to add the slice with the mode
+so when it changes , the useEffect fires and changes
+the class for the body
+
