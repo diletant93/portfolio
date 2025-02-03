@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         primary: "rgba(var(--primary))",
-        white: "rgba(var(--secondary))",
+        secondary: "rgba(var(--secondary))",
       },
     },
   },

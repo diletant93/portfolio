@@ -1,5 +1,5 @@
-import ToggleMode from "./components/ToggleMode"
-import { useThemeMode } from "./hooks/useThemeMode"
+import ToggleMode from "./features/ThemeMode/components/ToggleMode"
+import { useThemeMode } from "./features/ThemeMode/hooks/useThemeMode"
 
 function App() {
   useThemeMode();
