@@ -1,12 +1,12 @@
-import ToggleMode from "./features/ThemeMode/components/ToggleMode"
+import { ToggleMode } from "./features/ThemeMode";
 import { useThemeMode } from "./features/ThemeMode/hooks/useThemeMode"
 
 function App() {
   useThemeMode();
   return (
-    <div className="bg-primary" >
-      <ToggleMode />
-      <p className="text-secondary">Bob</p>
+    <div className="font-bold" >
+     <ToggleMode/>
+     <h1 className="heading">Heading</h1>
     </div>
   )
 }

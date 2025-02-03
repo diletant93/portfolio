@@ -7,6 +7,9 @@ export default {
         primary: "rgba(var(--primary))",
         secondary: "rgba(var(--secondary))",
       },
+      fontFamily:{
+        grotesk:['Space Grotesk', 'sans-serif'],
+      }
     },
   },
   plugins: [],

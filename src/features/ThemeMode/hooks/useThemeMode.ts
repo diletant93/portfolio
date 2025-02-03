@@ -2,8 +2,7 @@ import { removeTheQuotes } from "@/utils/stringManipulations";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { selectTheme } from "../themeModeSlice/selectors";
-import { THEMES, THEMES_VALUES } from "../constants";
-
+import { THEMES, THEMES_VALUES } from "../constants/themes";
 
 export function useThemeMode() {
   const theme = useSelector(selectTheme);
@@ -11,7 +10,7 @@ export function useThemeMode() {
   useEffect(() => {
     const theme: string | null = localStorage.getItem("theme");
 
-    const root = document.getElementById("root");
+    const root = document.body;
     root?.classList.remove(...THEMES_VALUES);
 
     if (theme) root?.classList.add(removeTheQuotes(theme));
