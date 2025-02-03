@@ -18,6 +18,11 @@
 
 @layer base{
     body{
-        @apply font-grotesk bg-primary text-secondary;
+        @apply font-grotesk bg-primary text-secondary sm:p-4;
+    }
+}
+@layer components{
+    .container{
+        @apply max-w-[80rem] mx-auto sm:border border-secondary 
     }
 }
