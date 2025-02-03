@@ -1,6 +1,7 @@
 function App() {
   return (
-    <div>Hello   world
+    <div className=" grid  text-2xl">Hello world
+
     </div>
   )
 }
