@@ -1,8 +1,8 @@
 function App() {
   return (
-    <div className=" grid  text-2xl">Hello world
-
-    </div>
+    <div className="bg-red-50">
+      Template
+    </div>  
   )
 }
 
