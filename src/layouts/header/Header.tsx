@@ -4,7 +4,7 @@ import { ToggleMode } from "@/features/ThemeMode";
 
 export default function Header() {
   return (
-    <header className="flex">
+    <header className="flex border-b border-b-secondary items-center pl-2">
        <Logo/>
        <Navigation/>
        {/* <ToggleMode/> */}

@@ -26,3 +26,8 @@
         @apply max-w-[80rem] mx-auto sm:border border-secondary 
     }
 }
+@layer utilities{
+    .flex-center{
+        @apply flex justify-center items-center
+    }
+}

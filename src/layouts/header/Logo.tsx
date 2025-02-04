@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
+
 export default function Logo() {
   return (
-    <p>
+    <Link to='/' className="font-medium uppercase tracking-wide hover:tracking-widest transition-all duration-300">
         talimonchyk
-    </p>
+    </Link>
   );
 }
