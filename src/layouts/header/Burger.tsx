@@ -3,12 +3,12 @@ import { cn } from "@/utils/cn";
 import { SetStateAction } from "react";
 
 export default function Burger({onOpen}:{onOpen:() => void}) {
-    const lineStyles = "block w-5 bg-secondary h-[2px]"
+    const lineStyles = "block w-5 bg-secondary h-[2px] group-hover:scale-x-[1.20]  transition-all duration-300 origin-right"
     return (
-        <Button onClick={onOpen} className="border-0 p-0 hover:bg-transparent hover:scale-x-125 hover:scale-y-110 transition-all origin-right">
-            <span className={lineStyles}></span>
-            <span className={cn(lineStyles, 'w-3 self-end my-2 ml-auto')}></span>
-            <span className={lineStyles}></span>
+        <Button onClick={onOpen} className="group border-0 px-4 py-5 hover:bg-transparent  ">
+            <span className={cn(lineStyles,'group-hover:-translate-y-[2px]')}></span>
+            <span className={cn(lineStyles, 'w-3 self-end my-2 ml-auto ')}></span>
+            <span className={cn(lineStyles,'group-hover:translate-y-[2px]')}></span>
         </Button>
     );
 }

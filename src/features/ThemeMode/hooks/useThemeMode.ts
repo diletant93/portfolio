@@ -5,17 +5,39 @@ import { selectTheme } from "../themeModeSlice/selectors";
 import { THEMES, THEMES_VALUES } from "../constants/themes";
 
 export function useThemeMode() {
-  const theme = useSelector(selectTheme);
-  console.log("here inside the theme", theme);
-  useEffect(() => {
-    const theme: string | null = localStorage.getItem("theme");
+    const themeFromRedux = useSelector(selectTheme);
+    
+    useEffect(() => {
+        const root = document.body;
+        if (!root) return;
 
-    const root = document.body;
-    root?.classList.remove(...THEMES_VALUES);
+        // Remove existing theme classes
+        root.classList.remove(...THEMES_VALUES);
 
-    if (theme) root?.classList.add(removeTheQuotes(theme));
-    else if (window.matchMedia("(prefers-color-scheme:dark)"))
-      root?.classList.add(THEMES.DARK);
-    else root?.classList.add(THEMES.LIGHT);
-  }, [theme]);
+        // Get theme from storage
+        const themeFromStorage = localStorage.getItem("theme");
+        
+        // Determine which theme to apply
+        let themeToApply: string | null = null;
+        
+        if (themeFromStorage) {
+            const cleanTheme = removeTheQuotes(themeFromStorage);
+            if (THEMES_VALUES.includes(cleanTheme as THEMES)) {
+                themeToApply = cleanTheme;
+            }
+        }
+
+        // If no valid theme from storage, use system preference
+        if (!themeToApply) {
+            themeToApply = window.matchMedia("(prefers-color-scheme: dark)").matches 
+                ? THEMES.DARK 
+                : THEMES.LIGHT;
+        }
+
+        // Apply theme
+        if (themeToApply) {
+            root.classList.add(themeToApply);
+        }
+        
+    }, [themeFromRedux]);
 }

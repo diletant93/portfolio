@@ -4,15 +4,15 @@ export type navigationItemType = {
 }
 export const navigationItems : navigationItemType[] =[
     {
-        path:'',
+        path:'/bio',
         label:'Bio',
     },
     {
-        path:'',
+        path:'/abilities',
         label:'Abilities'
     },
     {
-        path:'',
+         path:'/perspectives',
         label:'Perspectives'
     },
 ]
