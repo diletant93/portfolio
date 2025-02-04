@@ -3,10 +3,12 @@ import NavigationItem from "./NavigationItem";
 
 export default function NavivationList() {
   return (
-    <div>
-       {navigationItems.map((item:navigationItemType)=>{
-        return <NavigationItem item={item}/>
-       })}
-    </div>
+    <nav className="hidden sm:block">
+        <ul className="flex">
+        {navigationItems.map((item:navigationItemType)=>{
+            return <NavigationItem item={item}/>
+        })}
+        </ul>
+    </nav>
   );
 }

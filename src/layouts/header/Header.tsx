@@ -3,9 +3,9 @@ import Navigation from "./Navigation";
 
 export default function Header() {
   return (
-    <div>
+    <header className="flex justify-between">
        <Logo/>
        <Navigation/>
-    </div>
+    </header>
   );
 }
