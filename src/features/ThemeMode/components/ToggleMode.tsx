@@ -1,9 +1,9 @@
 import { useLocalStorage } from "@/hooks/useLocalStorage";
-import { Button } from "../../../components/ui/button";
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from "@/store/store";
 import { setTheme } from "../themeModeSlice/slice";
 import { THEMES_VALUES } from "../constants/themes";
+import Button from "@/components/ui/Button";
 
 export default function ToggleMode() {
     const { setItem } = useLocalStorage<string>('theme')

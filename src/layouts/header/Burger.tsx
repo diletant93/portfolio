@@ -1,9 +1,7 @@
-import { Button } from "@/components/ui/button";
+import Button from "@/components/ui/Button";
 
 export default function Burger() {
-  return (
-    <Button className="sm:hidden">
-       Burger
-    </Button>
-  );
+    return (
+        <Button>Hello</Button>
+    );
 }

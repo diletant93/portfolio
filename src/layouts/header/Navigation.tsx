@@ -3,9 +3,9 @@ import NavivationList from "./NavivationList";
 
 export default function Navigation() {
   return (
-    <div>
+    <nav className="ml-auto">
        <Burger/>
        <NavivationList/>
-    </div>
+    </nav>
   );
 }
