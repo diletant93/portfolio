@@ -1,0 +1,1 @@
+1) change the animation of the menu. It should appear one by one as in the referrence
