@@ -1,6 +1,5 @@
 import Button from "@/components/ui/Button";
 import { cn } from "@/utils/cn";
-import { SetStateAction } from "react";
 
 export default function Burger({onOpen}:{onOpen:() => void}) {
     const lineStyles = "block w-5 bg-secondary h-[2px] group-hover:scale-x-[1.20]  transition-all duration-300 origin-right"
