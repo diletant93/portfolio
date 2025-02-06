@@ -1,7 +1,8 @@
+import NavigationList from "./NavivgationList";
+
 export default function DesktopNavigation() {
+
   return (
-    <div>
-       DesktopNavigation
-    </div>
+    <NavigationList className="hidden md:flex md:relative"/>
   );
 }
