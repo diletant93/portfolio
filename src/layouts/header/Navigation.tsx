@@ -14,7 +14,7 @@ export default function Navigation() {
           <DesktopNavigation />
         ):(
           <>
-          <div className="md:hidden border-l border-l-white ">
+          <div className="border-l border-l-white ">
             <Burger />
           </div>
           <MobileNavigation />

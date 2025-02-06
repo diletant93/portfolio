@@ -25,6 +25,12 @@
     .container{
         @apply max-w-[80rem] mx-auto sm:border border-secondary 
     }
+    .content{
+        @apply min-h-screen flex flex-col
+    }
+    .main{
+        @apply flex-1
+    }
 }
 @layer utilities{
     .flex-center{
