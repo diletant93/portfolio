@@ -1,12 +1,14 @@
 import { removeTheQuotes } from "@/utils/stringManipulations";
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectTheme } from "../themeModeSlice/selectors";
 import { THEMES, THEMES_VALUES } from "../constants/themes";
+import { AppDispatch } from "@/store/store";
+import { setTheme } from "../themeModeSlice/slice";
 
 export function useThemeMode() {
     const themeFromRedux = useSelector(selectTheme);
-    
+    const dispatch = useDispatch<AppDispatch>();
     useEffect(() => {
         const root = document.body;
         if (!root) return;
@@ -35,9 +37,8 @@ export function useThemeMode() {
         }
 
         // Apply theme
-        if (themeToApply) {
             root.classList.add(themeToApply);
-        }
+            dispatch(setTheme(themeToApply))
         
-    }, [themeFromRedux]);
+    }, [themeFromRedux,dispatch]);
 }

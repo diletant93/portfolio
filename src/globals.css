@@ -42,8 +42,13 @@
     .footer{
         @apply flex flex-wrap justify-between gap-5 px-5 
     }
-    .test{
-        @apply bg-red-400 !important
+    .shadcn-header-selector-trigger{
+        @apply flex gap-2 h-full text-secondary rounded-none border-none font-bold uppercase hover:bg-secondary hover:text-primary !important
+    }
+    .shadcn-header-selector-content{
+    }
+    .shadcn-header-selector-item{
+        @apply px-2 py-4 cursor-pointer rounded-none text-secondary font-bold uppercase bg-primary hover:text-primary hover:bg-secondary  !important
     }
 }
 @layer utilities{

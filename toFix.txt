@@ -4,31 +4,12 @@ get "dark"  and when we are trying to retrieve it we
 get into the class : ""dark"" that's why it doesnt work
 Check if we can fix this without the additional removeTheQuotes utill function
 
+2) fix the scrollbar: when we click the theme selector the scrollbar disappears
+and goes back when the selector goes inactive
 
-2) we need to add the slice with the mode
-so when it changes , the useEffect fires and changes
-the class for the body
+3)click on the theme selector , and when click on anywhere else 
+we see this strange grey border and if we click again
+somewhere we can see our correct border
 
-
-
-3)
-import { navigationItems, navigationItemType } from "@/constants/navigationItems";
-import NavigationItem from "./NavigationItem";
-import { cn } from "@/utils/cn";
-
-export default function NavivationList({ isOpen, mediumDevice }: { isOpen: boolean , mediumDevice:boolean}) {
-  const smallDevisesStyles = cn(
-    'absolute left-0 right-0 bg-primary transition-opacity top-[101%] duration-500 z-15',
-    !isOpen && 'opacity-0 h-0 pointer-events-none ',
-    isOpen && `opacity-1 `
-
-  )
-  const largeDevisesStyles = 'relative flex'
-  return (
-    <ul className={cn(mediumDevice ?largeDevisesStyles: smallDevisesStyles)}>
-      {navigationItems.map((item: navigationItemType) => {
-        return <NavigationItem key={item.label} item={item} />
-      })}
-    </ul>
-  );
-}
+4)set theme. It's better that we explicitly limit what we can set to theme (we need
+to set only the THEME_VALUES)
