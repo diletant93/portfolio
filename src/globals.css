@@ -2,7 +2,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+:root{
+    --grey:190, 189, 191;
+}
 .dark{
     --primary:0,0,0;
     --secondary:255,255,255;
@@ -30,6 +32,15 @@
     }
     .main{
         @apply flex-1
+    }
+    .header{
+        @apply relative flex border-b border-b-secondary items-center pl-5 z-20
+    }
+    .footer{
+        @apply flex flex-wrap justify-between gap-5 px-5 
+    }
+    .social{
+       
     }
 }
 @layer utilities{

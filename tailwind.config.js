@@ -6,6 +6,7 @@ export default {
       colors: {
         primary: "rgba(var(--primary))",
         secondary: "rgba(var(--secondary))",
+        grey:'rgba(var(--grey))',
       },
       fontFamily:{
         grotesk:['Space Grotesk', 'sans-serif'],
