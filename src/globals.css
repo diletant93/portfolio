@@ -20,7 +20,10 @@
 
 @layer base{
     body{
-        @apply font-grotesk bg-primary text-secondary sm:p-4 lg:text-[115%];
+        @apply font-grotesk bg-primary text-secondary  lg:text-[115%];
+    }
+    #root{
+        @apply sm:p-4
     }
 }
 @layer components{
@@ -39,8 +42,8 @@
     .footer{
         @apply flex flex-wrap justify-between gap-5 px-5 
     }
-    .social{
-       
+    .test{
+        @apply bg-red-400 !important
     }
 }
 @layer utilities{

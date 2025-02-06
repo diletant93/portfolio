@@ -8,7 +8,7 @@ import { MEDIA_QUERIES } from "@/constants/mediaQueries";
 export default function Navigation() {
   const matchesMediumDevices = useMediaQuery(MEDIA_QUERIES.MD)
   return (
-    <nav className="ml-auto">
+    <nav>
       <OpenStateProvider>
         {matchesMediumDevices ?(
           <DesktopNavigation />

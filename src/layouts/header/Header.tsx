@@ -6,8 +6,10 @@ export default function Header() {
   return (
     <header className="header">
        <Logo/>
+       <div className="ml-auto self-stretch border-l border-l-secondary">
+        <ToggleMode/>
+       </div>
        <Navigation/>
-       {/* <ToggleMode/> */}
     </header>
   );
 }

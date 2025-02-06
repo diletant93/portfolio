@@ -1,4 +1,4 @@
-import Button from "@/components/ui/Button";
+import Button from "@/components/ui/button";
 import { useOpenState } from "@/context/OpenStateContext";
 import { cn } from "@/utils/cn";
 
