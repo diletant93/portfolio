@@ -13,3 +13,7 @@ somewhere we can see our correct border
 
 4)set theme. It's better that we explicitly limit what we can set to theme (we need
 to set only the THEME_VALUES)
+
+!6)Start making the abilities page: the first of all we need the big modal where we are going to test our abilities
+!7)Add the first ability , i guess it should be registration and the second one login
+!8)The third ability will be multipage forms
