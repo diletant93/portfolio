@@ -1,6 +1,6 @@
-import Button from "@/components/ui/button";
 import { useOpenState } from "@/context/OpenStateContext";
 import { cn } from "@/utils/cn";
+import { Button } from "../ui/button";
 
 export default function Burger() {
     const {setIsOpen} = useOpenState()

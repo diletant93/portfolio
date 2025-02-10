@@ -5,7 +5,7 @@ import AbilityCard from "./AbilityCard";
 export default function SubGrid() {
   return (
     <div className="abilities-grid lg:grid-cols-[repeat(auto-fit,minmax(18rem,1fr))">
-        {subAbilitiesList.map((ability:Ability)=><AbilityCard key={ability.name} ability={ability}/>)}
+      {subAbilitiesList.map((ability: Ability) => <AbilityCard key={ability.name} ability={ability} />)}
     </div>
   );
 }

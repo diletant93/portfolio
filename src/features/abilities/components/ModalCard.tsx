@@ -15,7 +15,7 @@ export default function ModalCard({ability}:{ability:Ability}) {
     <DialogTrigger className="w-full">
         <AbilityPreview ability={ability}/>
     </DialogTrigger>
-    <DialogContent>
+    <DialogContent className="shadcn-card-dialog-content">
       <DialogHeader>
         <DialogTitle>Are you absolutely sure?</DialogTitle>
         <DialogDescription>
@@ -23,6 +23,7 @@ export default function ModalCard({ability}:{ability:Ability}) {
           and remove your data from our servers.
         </DialogDescription>
       </DialogHeader>
+      
     </DialogContent>
   </Dialog>
   

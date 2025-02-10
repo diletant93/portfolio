@@ -52,8 +52,10 @@
     .shadcn-header-selector-item{
         @apply px-2 py-4 cursor-pointer rounded-none text-secondary font-bold uppercase bg-primary hover:text-primary hover:bg-secondary  !important
     }
-    
-    
+    .shadcn-card-dialog-content{
+        @apply  bg-primary  !important
+    }
+
     /* abilities */
     .abilities-grid{/* the justify-center items-center is temporary*/
         @apply grid md:grid-cols-[repeat(auto-fit,minmax(25rem,1fr))] justify-items-center
