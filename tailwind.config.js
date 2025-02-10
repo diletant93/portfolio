@@ -10,6 +10,7 @@ export default {
       },
       fontFamily:{
         grotesk:['Space Grotesk', 'sans-serif'],
+        sans:["Space Grotesk", 'sans-serif'],
       }
     },
   },

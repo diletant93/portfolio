@@ -4,36 +4,36 @@ import { Ability } from "../types/abilityRelated"
 export const mainAbilitiesList : Ability[] = [
     {
         name:"Registration",
-        // abilityCopmonent:<AuthForm/>
+        abilityCopmonent:<AuthForm type="registration"/>
     },
     {
         name:'Login',
-        // abilityCopmonent:null
+        abilityCopmonent:<AuthForm type="login"/>
     },
 ]
 export const subAbilitiesList : Ability[] =[
     {
         name:'Input',
-        // abilityCopmonent:null
+        abilityCopmonent:null
     },
     {
         name:'Debounce',
-        // abilityCopmonent:null
+        abilityCopmonent:null
     },
     {
         name:'Timer',
-        // abilityCopmonent:null
+        abilityCopmonent:null
     },
     {
         name:'LocalStorage',
-        // abilityCopmonent:null
+        abilityCopmonent:null
     },
     {
         name:'Media query',
-        // abilityCopmonent:null
+        abilityCopmonent:null
     },
     {
         name:'Toast',
-        // abilityCopmonent:null
+        abilityCopmonent:null
     }
 ]

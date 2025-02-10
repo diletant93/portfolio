@@ -46,16 +46,24 @@
     }
 
     /* Shadcn */
+    /* Selector */
     .shadcn-header-selector-trigger{
         @apply flex gap-2 h-full text-secondary rounded-none border-none font-bold uppercase hover:bg-secondary hover:text-primary !important
     }
     .shadcn-header-selector-item{
         @apply px-2 py-4 cursor-pointer rounded-none text-secondary font-bold uppercase bg-primary hover:text-primary hover:bg-secondary  !important
     }
+    /* Dialog window */
     .shadcn-card-dialog-content{
-        @apply  bg-primary  !important
+        @apply  bg-primary !important
     }
-
+    /* Form */
+    .shadcn-auth-form{
+        @apply  !important
+    }
+    .shadcn-form-message{
+        @apply text-red-900 !important
+    }
     /* abilities */
     .abilities-grid{/* the justify-center items-center is temporary*/
         @apply grid md:grid-cols-[repeat(auto-fit,minmax(25rem,1fr))] justify-items-center

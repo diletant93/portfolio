@@ -23,7 +23,7 @@ export default function ModalCard({ability}:{ability:Ability}) {
           and remove your data from our servers.
         </DialogDescription>
       </DialogHeader>
-      
+      {ability.abilityCopmonent}
     </DialogContent>
   </Dialog>
   

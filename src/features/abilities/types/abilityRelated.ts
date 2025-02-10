@@ -1,4 +1,5 @@
 export type Ability ={
     name:string;
-    // abilityCopmonent:React.ReactNode
+    abilityCopmonent:React.ReactNode
+    
 }
