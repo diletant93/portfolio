@@ -3,7 +3,7 @@ import NavigationList from "./NavivgationList";
 import NavigationItem from "./NavigationItem";
 
 export default function DesktopNavigation() {
-  const renderDesktopNavigationItem = (item:navigationItemType) => <DestktopNavigationItem item={item}/>
+  const renderDesktopNavigationItem = (item:navigationItemType) => <DestktopNavigationItem key={item.label} item={item}/>
   return (
     <NavigationList className="flex" render={renderDesktopNavigationItem}/>
   );

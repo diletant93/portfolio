@@ -20,13 +20,15 @@
 
 @layer base{
     body{
-        @apply font-grotesk bg-primary text-secondary  lg:text-[115%];
+        @apply font-grotesk bg-primary text-secondary lg:text-[115%] ;
     }
     #root{
         @apply sm:p-4
     }
 }
 @layer components{
+
+    /* layout */
     .container{
         @apply max-w-[80rem] mx-auto sm:border border-secondary 
     }
@@ -42,17 +44,30 @@
     .footer{
         @apply flex flex-wrap justify-between gap-5 px-5 
     }
+
+    /* Shadcn */
     .shadcn-header-selector-trigger{
         @apply flex gap-2 h-full text-secondary rounded-none border-none font-bold uppercase hover:bg-secondary hover:text-primary !important
-    }
-    .shadcn-header-selector-content{
     }
     .shadcn-header-selector-item{
         @apply px-2 py-4 cursor-pointer rounded-none text-secondary font-bold uppercase bg-primary hover:text-primary hover:bg-secondary  !important
     }
+    
+    
+    /* abilities */
+    .abilities-grid{/* the justify-center items-center is temporary*/
+        @apply grid md:grid-cols-[repeat(auto-fit,minmax(25rem,1fr))] justify-items-center
+    }
+    .ability-preview{
+        @apply px-5 py-2 bg-red-600
+    }
+    /*  */
 }
 @layer utilities{
     .flex-center{
         @apply flex justify-center items-center
+    }
+    .h1{
+        @apply text-xl font-bold text-secondary sm:text-3xl  lg:text-4xl
     }
 }

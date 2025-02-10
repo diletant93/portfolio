@@ -2,9 +2,10 @@ import { removeTheQuotes } from "@/utils/stringManipulations";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectTheme } from "../themeModeSlice/selectors";
-import { THEMES, THEMES_VALUES } from "../constants/themes";
+import { THEMES_VALUES } from "../constants/themes";
 import { AppDispatch } from "@/store/store";
 import { setTheme } from "../themeModeSlice/slice";
+import { THEMES } from "../types";
 
 export function useThemeMode() {
     const themeFromRedux = useSelector(selectTheme);

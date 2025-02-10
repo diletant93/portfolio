@@ -1,5 +1,5 @@
-import Logo from "@/layouts/header/Logo";
-import Navigation from "./Navigation";
+import Logo from "@/components/Logo";
+import Navigation from "@/components/navigation/Navigation";
 import { ToggleMode } from "@/features/ThemeMode";
 
 export default function Header() {
