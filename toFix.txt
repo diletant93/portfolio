@@ -14,6 +14,10 @@ somewhere we can see our correct border
 4)set theme. It's better that we explicitly limit what we can set to theme (we need
 to set only the THEME_VALUES)
 
-!6)Start making the abilities page: the first of all we need the big modal where we are going to test our abilities
-!7)Add the first ability , i guess it should be registration and the second one login
-!8)The third ability will be multipage forms
+!1) end the form styles: a) add the progress bar when we fill each of the inputs the progress bar progresses
+                  b) 
+!2)add the actual registration and login: step by step watch the guide how to do that with suppabase:
+    a)do that using axios so do that by using the direct endpoints
+    b)do not forget to commit the small changes
+    
+!3)If we are good we can try to implement multipage registration

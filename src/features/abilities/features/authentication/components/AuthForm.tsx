@@ -12,54 +12,12 @@ import {
 } from "@/components/ui/form"
 
 import { Input } from "@/components/ui/input"
-import { AuthFormProps, FormFieldType, FormType } from "../types/formTypes"
-import { loginValidationSchema, registerValidationSchema } from "../schema/AuthSchemas"
+import { AuthFormProps} from "../types/formTypes"
 import React from "react"
-
-
-function getFormInitialInstances(type: FormType):
-  [z.infer<typeof registerValidationSchema> | z.infer<typeof loginValidationSchema>,
-    typeof registerValidationSchema | typeof loginValidationSchema] {
-
-  let defaultValues: z.infer<typeof registerValidationSchema> | z.infer<typeof loginValidationSchema>;
-  let validationSchema: typeof registerValidationSchema | typeof loginValidationSchema;
-
-  if (type === 'registration') {
-    defaultValues = {
-      fullname: '',
-      email: '',
-      password: '',
-      confirmPassword: ''
-    }
-    validationSchema = registerValidationSchema
-  } else {
-    defaultValues = {
-      email: '',
-      password: '',
-      confirmPassword: '',
-    }
-    validationSchema = loginValidationSchema
-  }
-
-  return [defaultValues, validationSchema]
-}
-
-function triggerField(
-  e: React.ChangeEvent<HTMLInputElement>,
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
-  trigger: (field: FormFieldType) => void,
-  clearErrors: (field: FormFieldType) => void,
-  field: FormFieldType) {
-
-  onChange(e)
-
-  if (e.target.value.trim() !== "") {
-    trigger(field)
-  } else {
-    clearErrors(field)
-  }
-  
-}
+import { Progress } from "@/components/ui/progress"
+import {useValidInputsCount } from "../hooks/useValidInputsCount"
+import { getFormInitialInstances } from "../utilities/getFormInitialInstances"
+import { triggerField } from "../utilities/triggerField"
 
 export function AuthForm({ type }: AuthFormProps) {
 
@@ -69,8 +27,16 @@ export function AuthForm({ type }: AuthFormProps) {
     resolver: zodResolver(validationSchema),
     defaultValues: defaultValues,
     mode: 'onSubmit',
-    shouldUnregister: false,
   })
+
+  const {progressPercentage, updateValidCount} = useValidInputsCount(defaultValues,form.watch(),false)
+
+  function onInputBlur(onBlur: (e: React.ChangeEvent<HTMLInputElement>) => void) {
+    return (e: React.ChangeEvent<HTMLInputElement>) => {
+      onBlur(e)
+      updateValidCount()
+    }
+  }
 
   function onSubmit(values: z.infer<typeof validationSchema>) {
 
@@ -87,9 +53,12 @@ export function AuthForm({ type }: AuthFormProps) {
             <FormItem>
               <FormLabel>Fullname</FormLabel>
               <FormControl>
-                <Input {...field} onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  triggerField(e, field.onChange, form.trigger, form.clearErrors, 'fullname')
-                } />
+                <Input {...field}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    triggerField(e, field.onChange, form.trigger, form.clearErrors, 'fullname')
+                  }
+                  onBlur={onInputBlur(field.onBlur)}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -102,9 +71,11 @@ export function AuthForm({ type }: AuthFormProps) {
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input {...field} onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  triggerField(e, field.onChange, form.trigger, form.clearErrors, 'email')
-                } />
+                <Input {...field}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    triggerField(e, field.onChange, form.trigger, form.clearErrors, 'email')
+                  }
+                  onBlur={onInputBlur(field.onBlur)} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -117,8 +88,10 @@ export function AuthForm({ type }: AuthFormProps) {
             <FormItem>
               <FormLabel>Password</FormLabel>
               <FormControl>
-                <Input {...field} onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  triggerField(e, field.onChange, form.trigger, form.clearErrors, 'password')} />
+                <Input {...field}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    triggerField(e, field.onChange, form.trigger, form.clearErrors, 'password')}
+                  onBlur={onInputBlur(field.onBlur)} />
               </FormControl>
               <FormMessage className="shadcn-form-message" />
             </FormItem>
@@ -131,8 +104,10 @@ export function AuthForm({ type }: AuthFormProps) {
             <FormItem>
               <FormLabel>Confirm password</FormLabel>
               <FormControl>
-                <Input {...field} onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  triggerField(e, field.onChange, form.trigger, form.clearErrors, 'confirmPassword')} />
+                <Input {...field}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    triggerField(e, field.onChange, form.trigger, form.clearErrors, 'confirmPassword')}
+                  onBlur={onInputBlur(field.onBlur)} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -140,6 +115,7 @@ export function AuthForm({ type }: AuthFormProps) {
         />
         <Button type="submit" className="mt-5">Submit</Button>
       </form>
+      <Progress value={progressPercentage} />
     </Form>
   )
 }
