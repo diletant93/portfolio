@@ -1,83 +1,87 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-:root{
-    --grey:190, 189, 191;
+:root {
+  --grey: 190, 189, 191;
 }
-.dark{
-    --primary:0,0,0;
-    --secondary:255,255,255;
+.dark {
+  --primary: 0, 0, 0;
+  --secondary: 255, 255, 255;
 }
-.light{
-    --primary:255,255,255;
-    --secondary:0,0,0;
+.light {
+  --primary: 255, 255, 255;
+  --secondary: 0, 0, 0;
 }
-.red{
-    --primary:252, 235, 3;
-    --secondary:36, 3, 252;
+.red {
+  --primary: 252, 235, 3;
+  --secondary: 36, 3, 252;
 }
 
-@layer base{
-    body{
-        @apply font-grotesk bg-primary text-secondary lg:text-[115%] ;
-    }
-    #root{
-        @apply sm:p-4
-    }
+@layer base {
+  body {
+    @apply bg-primary font-grotesk text-secondary lg:text-[115%];
+  }
+  #root {
+    @apply sm:p-4;
+  }
 }
-@layer components{
+@layer components {
+  /* layout */
+  .container {
+    @apply mx-auto max-w-[80rem] border-secondary sm:border;
+  }
+  .content {
+    @apply flex min-h-screen flex-col;
+  }
+  .main {
+    @apply flex-1;
+  }
+  .header {
+    @apply relative z-20 flex items-center border-b border-b-secondary pl-5;
+  }
+  .footer {
+    @apply flex flex-wrap justify-between gap-5 px-5;
+  }
 
-    /* layout */
-    .container{
-        @apply max-w-[80rem] mx-auto sm:border border-secondary 
-    }
-    .content{
-        @apply min-h-screen flex flex-col
-    }
-    .main{
-        @apply flex-1
-    }
-    .header{
-        @apply relative flex border-b border-b-secondary items-center pl-5 z-20
-    }
-    .footer{
-        @apply flex flex-wrap justify-between gap-5 px-5 
-    }
-
-    /* Shadcn */
-    /* Selector */
-    .shadcn-header-selector-trigger{
-        @apply flex gap-2 h-full text-secondary rounded-none border-none font-bold uppercase hover:bg-secondary hover:text-primary !important
-    }
-    .shadcn-header-selector-item{
-        @apply px-2 py-4 cursor-pointer rounded-none text-secondary font-bold uppercase bg-primary hover:text-primary hover:bg-secondary  !important
-    }
-    /* Dialog window */
-    .shadcn-card-dialog-content{
-        @apply  bg-primary !important
-    }
-    /* Form */
-    .shadcn-auth-form{
-        @apply  !important
-    }
-    .shadcn-form-message{
-        @apply text-red-900 !important
-    }
-    /* abilities */
-    .abilities-grid{/* the justify-center items-center is temporary*/
-        @apply grid md:grid-cols-[repeat(auto-fit,minmax(25rem,1fr))] justify-items-center
-    }
-    .ability-preview{
-        @apply px-5 py-2 bg-red-600
-    }
-    /*  */
+  /* Shadcn */
+  /* Selector */
+  .shadcn-header-selector-trigger {
+    @apply flex h-full gap-2 rounded-none border-none font-bold uppercase text-secondary hover:bg-secondary hover:text-primary !important;
+  }
+  .shadcn-header-selector-item {
+    @apply cursor-pointer rounded-none bg-primary px-2 py-4 font-bold uppercase text-secondary hover:bg-secondary hover:text-primary !important;
+  }
+  /* Dialog window */
+  .shadcn-card-dialog-content {
+    @apply bg-primary !important;
+  }
+  /* Form */
+  .shadcn-auth-form {
+    @apply !important;
+  }
+  .shadcn-form-message {
+    @apply text-red-900 !important;
+  }
+  /* Progress */
+  .shadcn-form-progressbar {
+    @apply bg-primary !important;
+  }
+  /* abilities */
+  .abilities-grid {
+    /* the justify-center items-center is temporary*/
+    @apply grid justify-items-center md:grid-cols-[repeat(auto-fit,minmax(25rem,1fr))];
+  }
+  .ability-preview {
+    @apply bg-gray-900 px-5 py-2;
+  }
+  /*  */
 }
-@layer utilities{
-    .flex-center{
-        @apply flex justify-center items-center
-    }
-    .h1{
-        @apply text-xl font-bold text-secondary sm:text-3xl  lg:text-4xl
-    }
+@layer utilities {
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+  .h1 {
+    @apply text-xl font-bold text-secondary sm:text-3xl lg:text-4xl;
+  }
 }
