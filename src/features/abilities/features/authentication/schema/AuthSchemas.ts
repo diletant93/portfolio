@@ -1,5 +1,5 @@
 import { z } from "zod";
-export const base = {
+const base = {
   email: z
     .string({ required_error: "Email is necessary" })
     .email({ message: "Invalid email format" }),

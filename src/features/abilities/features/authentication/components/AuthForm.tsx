@@ -13,7 +13,7 @@ import {
 
 import { Input } from "@/components/ui/input"
 import { AuthFormProps } from "../types/formTypes"
-import React from "react"
+import React, { useEffect } from "react"
 import { Progress } from "@/components/ui/progress"
 import { useValidInputsCount } from "../hooks/useValidInputsCount"
 import { getFormInitialInstances } from "../utilities/getFormInitialInstances"
@@ -23,7 +23,8 @@ import { useToast } from "@/hooks/use-toast"
 export function AuthForm({ type }: AuthFormProps) {
 
   const [defaultValues, validationSchema] = getFormInitialInstances(type)
-
+  console.log('default values:', defaultValues)
+  console.log('validation values:', defaultValues)
   const form = useForm<z.infer<typeof validationSchema>>({
     resolver: zodResolver(validationSchema),
     defaultValues: defaultValues,
@@ -48,7 +49,8 @@ export function AuthForm({ type }: AuthFormProps) {
     })
     console.log(values);
   }
-
+  console.log(type)
+  console.log('Errros', form.formState.errors);
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="shadcn-auth-form">

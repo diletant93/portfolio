@@ -8,7 +8,8 @@ export function triggerField(
   field: FormFieldType) {
 
   onChange(e)
-
+    console.log(field)
+    console.log(e.target.value)
   if (e.target.value.trim() !== "") {
     trigger(field)
   } else {
