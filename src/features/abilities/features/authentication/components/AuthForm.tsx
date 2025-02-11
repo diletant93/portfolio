@@ -121,9 +121,16 @@ export function AuthForm({ type }: AuthFormProps) {
             </FormItem>
           )}
         />
-        <Button type="submit" className="mt-5" disabled={isSubmitting}>
+        <div className="w-full md:w-1/2 flex flex-col md:flex-row gap-5 mt-5">
+        <Button type="submit" className="flex-1" disabled={isSubmitting}>
           {isSubmitting ? 'Submitting...' : 'Submit'}
         </Button>
+          
+        <Button type="button" className="flex-1" disabled={isSubmitting} onClick={(e:React.MouseEvent<HTMLButtonElement>)=>form.reset()}>
+          Clear
+        </Button>
+
+        </div>
       </form>
       <Progress value={progressPercentage} />
     </Form>

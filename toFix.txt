@@ -22,3 +22,5 @@ to set only the THEME_VALUES)
 
 
 t!)add the styles on the toast for just a simple notification and for an error
+
+t!!!!)BURGER MENU breaks when appears
