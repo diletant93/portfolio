@@ -1,8 +1,10 @@
 import { useCallback, useEffect, useState } from "react";
+import { FieldErrors } from "react-hook-form";
 
 export function useValidInputsCount<T extends Record<string,string>>(
     defaultValues: T,
     watchedValues: T,
+    errors:FieldErrors<T>,
     isAutoUpdate: boolean = true
 ){
     const [validCount, setValidCount] = useState<number>(0)
@@ -13,7 +15,7 @@ export function useValidInputsCount<T extends Record<string,string>>(
     const updateValidCount = useCallback(()=>{
         const valid = watchedValuesKeys.reduce((count, field)=>{
             const value = watchedValues[field]
-            if(value && value.trim() !== ''){
+            if(value && value.trim() !== '' && !errors[field]){
                 return count + 1
             }
             return count

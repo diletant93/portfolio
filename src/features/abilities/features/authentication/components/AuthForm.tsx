@@ -29,7 +29,7 @@ export function AuthForm({ type }: AuthFormProps) {
     mode: 'onSubmit',
   })
 
-  const {progressPercentage, updateValidCount} = useValidInputsCount(defaultValues,form.watch(),false)
+  const {progressPercentage, updateValidCount} = useValidInputsCount(defaultValues,form.watch(),form.formState.errors,false)
 
   function onInputBlur(onBlur: (e: React.ChangeEvent<HTMLInputElement>) => void) {
     return (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -38,9 +38,9 @@ export function AuthForm({ type }: AuthFormProps) {
     }
   }
 
-  function onSubmit(values: z.infer<typeof validationSchema>) {
-
-    console.log(values)
+  async function onSubmit(values: z.infer<typeof validationSchema>) {
+    await new Promise((resolve) => setTimeout(resolve, 3000)); 
+    console.log(values);
   }
 
   return (
@@ -113,7 +113,9 @@ export function AuthForm({ type }: AuthFormProps) {
             </FormItem>
           )}
         />
-        <Button type="submit" className="mt-5">Submit</Button>
+        <Button type="submit" className="mt-5">
+          {form.formState.isSubmitting ? 'Submitting...': 'Submit'}
+        </Button>
       </form>
       <Progress value={progressPercentage} />
     </Form>

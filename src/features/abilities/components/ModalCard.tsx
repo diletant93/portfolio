@@ -17,7 +17,7 @@ export default function ModalCard({ability}:{ability:Ability}) {
     </DialogTrigger>
     <DialogContent className="shadcn-card-dialog-content">
       <DialogHeader>
-        <DialogTitle>Are you absolutely sure?</DialogTitle>
+        <DialogTitle>{ability.heading}</DialogTitle>
         <DialogDescription>
           This action cannot be undone. This will permanently delete your account
           and remove your data from our servers.
