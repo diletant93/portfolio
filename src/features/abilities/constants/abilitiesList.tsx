@@ -5,6 +5,7 @@ export const mainAbilitiesList : Ability[] = [
     {
         name:"Registration",
         heading:'Register',
+        description:'Try to register yourself',
         abilityCopmonent:<AuthForm type="registration"/>
     },
     {

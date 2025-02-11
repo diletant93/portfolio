@@ -12,12 +12,13 @@ import {
 } from "@/components/ui/form"
 
 import { Input } from "@/components/ui/input"
-import { AuthFormProps} from "../types/formTypes"
+import { AuthFormProps } from "../types/formTypes"
 import React from "react"
 import { Progress } from "@/components/ui/progress"
-import {useValidInputsCount } from "../hooks/useValidInputsCount"
+import { useValidInputsCount } from "../hooks/useValidInputsCount"
 import { getFormInitialInstances } from "../utilities/getFormInitialInstances"
 import { triggerField } from "../utilities/triggerField"
+import { useToast } from "@/hooks/use-toast"
 
 export function AuthForm({ type }: AuthFormProps) {
 
@@ -28,9 +29,10 @@ export function AuthForm({ type }: AuthFormProps) {
     defaultValues: defaultValues,
     mode: 'onSubmit',
   })
+  const isSubmitting = form.formState.isSubmitting
 
-  const {progressPercentage, updateValidCount} = useValidInputsCount(defaultValues,form.watch(),form.formState.errors,false)
-
+  const { progressPercentage, updateValidCount } = useValidInputsCount(defaultValues, form.watch(), form.formState.errors, false)
+  const { toast } = useToast()
   function onInputBlur(onBlur: (e: React.ChangeEvent<HTMLInputElement>) => void) {
     return (e: React.ChangeEvent<HTMLInputElement>) => {
       onBlur(e)
@@ -39,7 +41,11 @@ export function AuthForm({ type }: AuthFormProps) {
   }
 
   async function onSubmit(values: z.infer<typeof validationSchema>) {
-    await new Promise((resolve) => setTimeout(resolve, 3000)); 
+    await new Promise((resolve) => setTimeout(resolve, 3000));
+    toast({
+      title: 'Submitted',
+      description: 'Lalalala'
+    })
     console.log(values);
   }
 
@@ -113,8 +119,8 @@ export function AuthForm({ type }: AuthFormProps) {
             </FormItem>
           )}
         />
-        <Button type="submit" className="mt-5">
-          {form.formState.isSubmitting ? 'Submitting...': 'Submit'}
+        <Button type="submit" className="mt-5" disabled={isSubmitting}>
+          {isSubmitting ? 'Submitting...' : 'Submit'}
         </Button>
       </form>
       <Progress value={progressPercentage} />

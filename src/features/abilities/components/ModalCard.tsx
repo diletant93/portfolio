@@ -19,8 +19,7 @@ export default function ModalCard({ability}:{ability:Ability}) {
       <DialogHeader>
         <DialogTitle>{ability.heading}</DialogTitle>
         <DialogDescription>
-          This action cannot be undone. This will permanently delete your account
-          and remove your data from our servers.
+          {ability.description}
         </DialogDescription>
       </DialogHeader>
       {ability.abilityCopmonent}
