@@ -13,7 +13,7 @@ import {
 
 import { Input } from "@/components/ui/input"
 import { AuthFormProps } from "../types/formTypes"
-import React, { useEffect } from "react"
+import React from "react"
 import { Progress } from "@/components/ui/progress"
 import { useValidInputsCount } from "../hooks/useValidInputsCount"
 import { getFormInitialInstances } from "../utilities/getFormInitialInstances"
