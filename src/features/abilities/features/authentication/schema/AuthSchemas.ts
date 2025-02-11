@@ -38,5 +38,5 @@ export const loginValidationSchema = z
   })
   .refine(({ password, confirmPassword }) => password === confirmPassword, {
     message: "Passwords do not match",
-    path: ["password", "confirmPassword"],
+    path: ["confirmPassword"],
   });
