@@ -18,13 +18,11 @@ import { Progress } from "@/components/ui/progress"
 import { useValidInputsCount } from "../hooks/useValidInputsCount"
 import { getFormInitialInstances } from "../utilities/getFormInitialInstances"
 import { triggerField } from "../utilities/triggerField"
-import { useToast } from "@/hooks/use-toast"
+import { useInfoToast } from "@/hooks/useInfoToast"
 
 export function AuthForm({ type }: AuthFormProps) {
 
   const [defaultValues, validationSchema] = getFormInitialInstances(type)
-  console.log('default values:', defaultValues)
-  console.log('validation values:', defaultValues)
   const form = useForm<z.infer<typeof validationSchema>>({
     resolver: zodResolver(validationSchema),
     defaultValues: defaultValues,
@@ -32,25 +30,23 @@ export function AuthForm({ type }: AuthFormProps) {
   })
   const isSubmitting = form.formState.isSubmitting
 
-  const { progressPercentage, updateValidCount } = useValidInputsCount(defaultValues, form.watch(), form.formState.errors, false)
-  const { toast } = useToast()
+  const { progressPercentage, updateValidCount, resetValidCount } = useValidInputsCount(defaultValues, form.watch(), form.formState.errors, false)
+  const { infoToast } = useInfoToast()
   function onInputBlur(onBlur: (e: React.ChangeEvent<HTMLInputElement>) => void) {
     return (e: React.ChangeEvent<HTMLInputElement>) => {
       onBlur(e)
       updateValidCount()
     }
   }
-
-  async function onSubmit(values: z.infer<typeof validationSchema>) {
-    await new Promise((resolve) => setTimeout(resolve, 3000));
-    toast({
-      title: 'Submitted',
-      description: 'Lalalala'
-    })
-    console.log(values);
+  function onClearForm(){
+    form.reset()
+    resetValidCount()
   }
-  console.log(type)
-  console.log('Errros', form.formState.errors);
+  async function onSubmit(values: z.infer<typeof validationSchema>) {
+    await new Promise((resolve) => setTimeout(resolve, 100));
+    infoToast('hello')
+
+  }
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="shadcn-auth-form">
@@ -126,7 +122,7 @@ export function AuthForm({ type }: AuthFormProps) {
           {isSubmitting ? 'Submitting...' : 'Submit'}
         </Button>
           
-        <Button type="button" className="flex-1" disabled={isSubmitting} onClick={(e:React.MouseEvent<HTMLButtonElement>)=>form.reset()}>
+        <Button type="button" className="flex-1" disabled={isSubmitting} onClick={onClearForm}>
           Clear
         </Button>
 

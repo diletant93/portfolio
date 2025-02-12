@@ -22,9 +22,9 @@ export function useValidInputsCount<T extends Record<string, string>>(
     }, 0);
     setValidCount(valid);
   }, [watchedValues, watchedValuesKeys, errors]);
-
+  const resetValidCount = () => setValidCount(0)
   useEffect(() => {
     if (isAutoUpdate) updateValidCount();
   }, [isAutoUpdate, updateValidCount]);
-  return { validCount, updateValidCount, progressPercentage };
+  return { validCount, updateValidCount, progressPercentage ,resetValidCount };
 }
