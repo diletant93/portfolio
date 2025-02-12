@@ -19,6 +19,3 @@ to set only the THEME_VALUES)
     b)do not forget to commit the small changes
     
 !3)If we are good we can try to implement multipage registration
-
-
-t!!!!)BURGER MENU breaks when appears

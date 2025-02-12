@@ -32,6 +32,7 @@ const toastVariants = cva(
           "destructive group border-red-500 bg-red-500 text-neutral-50 dark:border-red-900 dark:bg-red-900 dark:text-neutral-50",
         notice:'shadcn-notice-toast',
         error:'shadcn-error-toast',
+        success:'shadcn-success-toast',
       },
     },
     defaultVariants: {

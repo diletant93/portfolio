@@ -76,9 +76,12 @@
   .shadcn-error-toast {
     @apply border border-red-500 bg-red-500 text-secondary !important;
   }
+  .shadcn-success-toast{
+    @apply border border-green-500 bg-green-500 text-secondary !important;
+  }
   /* Button  */
   .shadcn-burger-button {
-    @apply group border-0 bg-transparent px-4 py-5 hover:bg-transparent !important;
+    @apply border-0 bg-transparent px-4 py-4 flex-col h-full !important;
   }
   /* abilities */
   .abilities-grid {

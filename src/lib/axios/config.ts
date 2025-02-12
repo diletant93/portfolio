@@ -1,9 +1,11 @@
 import axios from "axios";
 
-axios.defaults.headers.common["apikey"] =
-  import.meta.env.VITE_PUBLIC_SUPPABASE_API_KEY;
-axios.defaults.headers.common["Authorization"] =
-  `Beader ${import.meta.env.VITE_PUBLIC_SUPPABASE_API_KEY}`;
+export const axiosConfig = {
+  suppabaseApiKey:import.meta.env.VITE_PUBLIC_SUPPABASE_API_KEY as string,
+  suppabaseSecretRole: import.meta.env.VITE_SUPPABASE_SECRET_ROLE as string,
+}
+
+axios.defaults.headers.common["apikey"] = axiosConfig.suppabaseApiKey;
 
 axios.interceptors.request.use(
   (config) => {
@@ -16,3 +18,11 @@ axios.interceptors.request.use(
     return Promise.reject(error);
   },
 );
+
+
+
+export const secretKeyHeaders = {
+  apikey:axiosConfig.suppabaseSecretRole,
+  Authorization:`Bearer ${axiosConfig.suppabaseSecretRole}`,
+  'Content-type':'application/json',
+}

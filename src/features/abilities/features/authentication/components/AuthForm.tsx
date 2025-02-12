@@ -18,8 +18,9 @@ import { Progress } from "@/components/ui/progress"
 import { useValidInputsCount } from "../hooks/useValidInputsCount"
 import { getFormInitialInstances } from "../utilities/getFormInitialInstances"
 import { triggerField } from "../utilities/triggerField"
-import { useInfoToast } from "@/hooks/useInfoToast"
-import { useErrorToast } from "@/hooks/useErrorToast"
+import { useInfoToast } from "@/hooks/toast/useInfoToast"
+import { useErrorToast } from "@/hooks/toast/useErrorToast"
+import { useSuccessToast } from "@/hooks/toast/useSuccessToasts"
 
 export function AuthForm({ type }: AuthFormProps) {
 
@@ -32,9 +33,8 @@ export function AuthForm({ type }: AuthFormProps) {
   const isSubmitting = form.formState.isSubmitting
 
   const { progressPercentage, updateValidCount, resetValidCount } = useValidInputsCount(defaultValues, form.watch(), form.formState.errors, false)
-  
-  const { errorToast } = useErrorToast()
 
+  const {successToast} = useSuccessToast()
   function onInputBlur(onBlur: (e: React.ChangeEvent<HTMLInputElement>) => void) {
     return (e: React.ChangeEvent<HTMLInputElement>) => {
       onBlur(e)
@@ -42,14 +42,12 @@ export function AuthForm({ type }: AuthFormProps) {
     }
   }
 
-  function onClearForm(){
+  function onClearForm() {
     form.reset()
     resetValidCount()
   }
   async function onSubmit(values: z.infer<typeof validationSchema>) {
-    await new Promise((resolve) => setTimeout(resolve, 100));
-    errorToast('hello')
-
+    successToast('Registered')
   }
   return (
     <Form {...form}>
@@ -122,13 +120,13 @@ export function AuthForm({ type }: AuthFormProps) {
           )}
         />
         <div className="w-full md:w-1/2 flex flex-col md:flex-row gap-5 mt-5">
-        <Button type="submit" className="flex-1" disabled={isSubmitting}>
-          {isSubmitting ? 'Submitting...' : 'Submit'}
-        </Button>
-          
-        <Button type="button" className="flex-1" disabled={isSubmitting} onClick={onClearForm}>
-          Clear
-        </Button>
+          <Button type="submit" className="flex-1" disabled={isSubmitting}>
+            {isSubmitting ? 'Submitting...' : 'Submit'}
+          </Button>
+
+          <Button type="button" className="flex-1" disabled={isSubmitting} onClick={onClearForm}>
+            Clear
+          </Button>
 
         </div>
       </form>
