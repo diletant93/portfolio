@@ -5,13 +5,16 @@ export default {
     extend: {
       colors: {
         primary: "rgba(var(--primary))",
-        secondary: "rgba(var(--secondary))",
-        grey:'rgba(var(--grey))',
+        secondary: {
+          DEFAULT: "rgba(var(--secondary))",
+          light: "rgba(var(--secondary-light))",
+        },
+        grey: "rgba(var(--grey))",
       },
-      fontFamily:{
-        grotesk:['Space Grotesk', 'sans-serif'],
-        sans:["Space Grotesk", 'sans-serif'],
-      }
+      fontFamily: {
+        grotesk: ["Space Grotesk", "sans-serif"],
+        sans: ["Space Grotesk", "sans-serif"],
+      },
     },
   },
   plugins: [],

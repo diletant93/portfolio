@@ -8,12 +8,12 @@
 .dark {
   --primary: 0, 0, 0;
   --secondary: 255, 255, 255;
-  --secondary-light:235, 237, 237;
+  --secondary-light: 166, 166, 166;
 }
 .light {
   --primary: 255, 255, 255;
   --secondary: 0, 0, 0;
-  --secondary-light:33, 33, 33;
+  --secondary-light: 88, 88, 88;
 }
 .red {
   --primary: 252, 235, 3;
@@ -69,6 +69,17 @@
   .shadcn-form-progressbar {
     @apply bg-primary !important;
   }
+  /* Toast */
+  .shadcn-notice-toast {
+    @apply rounded-none border-[1px] border-secondary bg-primary text-2xl !important;
+  }
+  .shadcn-error-toast {
+    @apply border border-red-500 bg-red-500 text-secondary !important;
+  }
+  /* Button  */
+  .shadcn-burger-button {
+    @apply group border-0 bg-transparent px-4 py-5 hover:bg-transparent !important;
+  }
   /* abilities */
   .abilities-grid {
     /* the justify-center items-center is temporary*/
@@ -77,7 +88,6 @@
   .ability-preview {
     @apply bg-gray-900 px-5 py-2;
   }
-  /*  */
 }
 @layer utilities {
   .flex-center {

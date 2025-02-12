@@ -21,6 +21,4 @@ to set only the THEME_VALUES)
 !3)If we are good we can try to implement multipage registration
 
 
-t!)add the styles on the toast for just a simple notification and for an error
-
 t!!!!)BURGER MENU breaks when appears
