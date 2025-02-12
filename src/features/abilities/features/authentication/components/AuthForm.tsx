@@ -46,21 +46,23 @@ export function AuthForm({ type }: AuthFormProps) {
     resetValidCount()
   }
   async function onSubmit(values: z.infer<typeof validationSchema>) {
-    
+    if('fullName' in values && typeof values['fullName'] === 'string'){
+      await register({fullName:values.fullName, email:values.email , password:values.password})
+    }
   }
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="shadcn-auth-form">
         {type === 'registration' && <FormField
           control={form.control}
-          name="fullname"
+          name="fullName"
           render={({ field }) => (
             <FormItem>
               <FormLabel>Fullname</FormLabel>
               <FormControl>
                 <Input {...field}
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                    triggerField(e, field.onChange, form.trigger, form.clearErrors, 'fullname')
+                    triggerField(e, field.onChange, form.trigger, form.clearErrors, 'fullName')
                   }
                   onBlur={onInputBlur(field.onBlur)}
                 />

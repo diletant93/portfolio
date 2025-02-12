@@ -1,19 +1,18 @@
 import { useCustomToast } from "@/hooks/toast/useCustomToast";
 import { useMutation } from "@tanstack/react-query";
-import { checkUserExists } from "../services/authApi";
+import { SignUpUserType } from "../types/authTypes";
+import { signUpUser } from "../services/authApi";
 
 function useRegister() {
   const {successToast, errorToast} = useCustomToast()
 
   const { isPending:isRegistering, mutateAsync:register } = useMutation({
-    mutationFn:(email:string) => checkUserExists(email),
+    mutationFn:({fullName,email,password}:SignUpUserType) => signUpUser({fullName,email,password}),
     onSuccess: (data) => {
-        if(data === true){
-            errorToast('User exists')
-        }else{
-            successToast('User does not exist')
-        }
+       console.log('here is data',data)
+       successToast('Registered')
     },
+    onError:(error) => errorToast(error.message)
   });
 
   return { isRegistering, register };

@@ -1,38 +1,37 @@
-import { axiosConfig, secretKeyHeaders } from "@/lib/axios/config";
-import axios, { AxiosResponse } from "axios";
-import { SupabaseUser } from "../../../types/authTypes";
+import { supabase } from "@/lib/supabase/config";
+import { SignUpUserType } from "../types/authTypes";
 
-//checkUserExists
-//Sign up user
-
-const apiClient = axios.create({
-  baseURL: `https://${axiosConfig.suppabaseApiKey}.supabase.co/auth/v1`,
-});
-
-export async function checkUserExists(email: string) {
-  try {
-    const response: AxiosResponse<SupabaseUser[]> = await apiClient.get<
-      SupabaseUser[]
-    >(`/admin/users?email=eq.${email}`, { headers: secretKeyHeaders });
-    if (response.data.length > 0) {
-      console.log("User exists", response.data);
-      return true;
-    }
-    if (response.data.length <= 0) {
-      console.log("User does not exist");
-      return false;
-    }
-  } catch (error) {
-    console.log(error);
-    throw error;
+export async function signUpUser({
+  email,
+  password,
+  fullName,
+}: SignUpUserType) {
+  const {
+    data: { user },
+    error: signUpError,
+  } = await supabase.auth.signUp({
+    email,
+    password,
+  });
+  console.log('user', user)
+  if (signUpError || !user) {
+    console.log("Error while registering to the Users table");
+    throw new Error("Could not register");
   }
+  console.log('profile', {user:user.id, fullName, email})
+  const {data, error:profileError} = await supabase.from("profiles").insert([
+    {
+      user_id: user.id,
+      full_name:fullName,
+      email,
+    },
+  ]).select('*');
+  if(profileError){
+    console.log("Error while registering to the Profiles table");
+    throw new Error("Could not register");
+  }
+  console.log(data)
+  return data
 }
 
-export async function Register(someData: { email: string }) {
-  try {
-    await checkUserExists(someData.email)
-  } catch (error) {
-    console.log(error);
-    throw error;
-  }
-}
+//smth wrong , maybe i am blind and cant find the problem

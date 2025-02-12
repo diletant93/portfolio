@@ -19,7 +19,7 @@ const base = {
 export const registerValidationSchema = z
   .object({
     ...base,
-    fullname: z
+    fullName: z
       .string({ required_error: "Name is required" })
       .min(3, { message: "Name must be at least 3 characters long" })
       .max(50, { message: "Name must be at most 50 characters long" })
