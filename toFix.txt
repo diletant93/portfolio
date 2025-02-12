@@ -19,3 +19,8 @@ to set only the THEME_VALUES)
     b)do not forget to commit the small changes
     
 !3)If we are good we can try to implement multipage registration
+
+
+
+t!)fix the menu:a) when we click on an option it should close
+                b) when we click outside the menu it should hide (so create the useClickOutside hook)

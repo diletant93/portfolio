@@ -13,5 +13,19 @@ export function useCustomToast() {
             variant,
         });
     }
-    return { customToast }
+
+    const errorToast = (message: string, title?:string) =>{
+        customToast(message, title,'error')
+    }
+
+    const infoToast = (message: string, title?:string) =>{
+        customToast(message, title,'notice')
+    }
+
+    const successToast = (message: string, title?:string) =>{
+        customToast(message, title,'success')
+    }
+
+    return { errorToast, infoToast,successToast }
 }
+

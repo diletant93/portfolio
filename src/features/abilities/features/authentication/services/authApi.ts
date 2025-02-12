@@ -1,6 +1,6 @@
 import { axiosConfig, secretKeyHeaders } from "@/lib/axios/config";
 import axios, { AxiosResponse } from "axios";
-import { SupabaseUser } from "./types/authTypes";
+import { SupabaseUser } from "../../../types/authTypes";
 
 //checkUserExists
 //Sign up user
@@ -9,7 +9,7 @@ const apiClient = axios.create({
   baseURL: `https://${axiosConfig.suppabaseApiKey}.supabase.co/auth/v1`,
 });
 
-async function checkUserExists(email: string) {
+export async function checkUserExists(email: string) {
   try {
     const response: AxiosResponse<SupabaseUser[]> = await apiClient.get<
       SupabaseUser[]
