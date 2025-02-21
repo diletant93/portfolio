@@ -12,3 +12,18 @@ export type SignInUserType ={
     email:string;
     password:string;
 }
+
+
+export type SessionUserType={
+    id:string;
+    email:string;
+} | null
+
+export type AuthContextStateType={
+    isAuthenticated:boolean;
+    user:SessionUserType | null;
+}
+export type AuthContextValueType={
+    isAuthenticated:boolean;
+    user:SessionUserType | null;
+}

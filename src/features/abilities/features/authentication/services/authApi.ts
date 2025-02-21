@@ -1,5 +1,5 @@
 import { supabase } from "@/lib/supabase/config";
-import { SignInUserType, SignUpUserType } from "../types/authTypes";
+import { SessionUserType, SignInUserType, SignUpUserType } from "../types/authTypes";
 
 export async function signUpUser({
   email,
@@ -60,14 +60,14 @@ export async function signInUser({ email, password }: SignInUserType) {
     throw error;
   }
 }
-export async function checkUserSession() {
+export async function getCurrentUser (){
   try {
     const { data, error } = await supabase.auth.getUser();
     if (error) {
       console.log("Error while checking user session");
       throw new Error("Could not check user session");
     }
-    return Boolean(data.user)
+    return data.user as SessionUserType;
   } catch (error) {
     console.log(error);
     throw error;

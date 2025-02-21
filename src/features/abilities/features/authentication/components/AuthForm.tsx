@@ -20,6 +20,7 @@ import { getFormInitialInstances } from "../utilities/getFormInitialInstances"
 import { triggerField } from "../utilities/triggerField"
 import { useRegister } from "../hooks/useRegister"
 import { useLogin } from "../hooks/useLogin"
+import { useAuthentication } from "../context/AuthContext"
 
 export function AuthForm({ type }: AuthFormProps) {
   const [defaultValues, validationSchema] = getFormInitialInstances(type)
@@ -28,6 +29,7 @@ export function AuthForm({ type }: AuthFormProps) {
     defaultValues: defaultValues,
     mode: 'onSubmit',
   })
+  const {isAuthenticated} = useAuthentication()
   const isSubmitting = form.formState.isSubmitting
 
   const { isRegistering, register } = useRegister()
