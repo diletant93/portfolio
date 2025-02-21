@@ -1,5 +1,5 @@
 import { supabase } from "@/lib/supabase/config";
-import { SignUpUserType } from "../types/authTypes";
+import { SignInUserType, SignUpUserType } from "../types/authTypes";
 
 export async function signUpUser({
   email,
@@ -42,6 +42,25 @@ export async function signUpUser({
   }
   
 }
+
+export async function signInUser({email,password}: SignInUserType) {
+  try {
+    const {data, error} = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    })
+    if(error){
+      console.log("Error while signing in");
+      throw new Error("Could not sign in");
+    }
+    return data.user
+  } catch (error) {
+    console.log(error)
+    throw error
+  }
+ 
+}
+
 
 export async function checkUserExists(email:string){
   try {

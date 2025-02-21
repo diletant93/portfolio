@@ -8,3 +8,7 @@ export type SignUpUserType ={
     password:string;
     fullName:string;
 }
+export type SignInUserType ={
+    email:string;
+    password:string;
+}

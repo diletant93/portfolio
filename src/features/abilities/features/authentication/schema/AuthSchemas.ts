@@ -26,6 +26,7 @@ export const registerValidationSchema = z
       .regex(/^[a-zA-Z\s]+$/, {
         message: "Name can only contain letters and spaces",
       }),
+      
   })
   .refine(({ password, confirmPassword }) => password === confirmPassword, {
     message: "Passwords do not match",
