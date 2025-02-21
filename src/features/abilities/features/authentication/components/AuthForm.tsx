@@ -29,7 +29,7 @@ export function AuthForm({ type }: AuthFormProps) {
     defaultValues: defaultValues,
     mode: 'onSubmit',
   })
-  const {isAuthenticated} = useAuthentication()
+  const {isAuthenticated, isCheckingAuth} = useAuthentication()
   const isSubmitting = form.formState.isSubmitting
 
   const { isRegistering, register } = useRegister()
@@ -58,6 +58,8 @@ export function AuthForm({ type }: AuthFormProps) {
       await login({ email: values.email, password: values.password })
     }
   }
+  if(isCheckingAuth) return <div>Checking...</div>  
+  if(isAuthenticated) return <div>Already logged in</div>
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="shadcn-auth-form">

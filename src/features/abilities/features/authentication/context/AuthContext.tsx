@@ -3,12 +3,14 @@ import { AuthContextStateType, SessionUserType } from "../types/authTypes";
 import { getCurrentUser } from "../services/authApi";
 const INITIAL_STATE: AuthContextStateType = {
     isAuthenticated: false,
+    isCheckingAuth:false,
     user: null,
 }
 const AuthContext = createContext(INITIAL_STATE);
 function AuthProvider({ children }: { children: React.ReactNode }) {
-    
+
     const [isAuthenticated, setIsAuthenticated] = useState<boolean>(INITIAL_STATE.isAuthenticated);
+    const [isCheckingAuth, setIsCheckingAuth] = useState<boolean>(INITIAL_STATE.isCheckingAuth);
     const [sessionUser, setSessionUser] = useState<SessionUserType>(INITIAL_STATE.user);
 
     function logout() {
@@ -17,12 +19,16 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
     }
 
     const getSessionUser = useCallback( async function () {
+        setIsCheckingAuth(true)
         const user = await getCurrentUser()
+        console.log(user)
         if (user) {
             setIsAuthenticated(true)
             setSessionUser(user)
         }
         else logout()
+
+        setIsCheckingAuth(false)
     },[])
 
     useEffect(() => {
@@ -31,7 +37,8 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
 
     const value = {
         isAuthenticated,
-        user: sessionUser
+        isCheckingAuth,
+        user: sessionUser,
     }
     return (
         <AuthContext.Provider value={value}>

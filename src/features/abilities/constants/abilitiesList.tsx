@@ -1,5 +1,5 @@
+import AuthComponentWrapper from "../features/authentication/components/AuthComponentWrapper"
 import { AuthForm } from "../features/authentication/components/AuthForm"
-import { AuthProvider } from "../features/authentication/context/AuthContext"
 import { Ability } from "../types/abilityRelated"
 
 export const mainAbilitiesList: Ability[] = [
@@ -8,18 +8,19 @@ export const mainAbilitiesList: Ability[] = [
         heading: 'Register',
         description: 'Try to register yourself',
         abilityCopmonent: (
-            <AuthProvider>
+            <AuthComponentWrapper>
                 <AuthForm type="registration" />
-            </AuthProvider>
+            </AuthComponentWrapper>
         )
     },
     {
         name: 'Login',
         heading: 'Login',
+        description: 'Try to login yourself',
         abilityCopmonent: (
-            <AuthProvider>
+            <AuthComponentWrapper>
                 <AuthForm type="login" />
-            </AuthProvider>
+            </AuthComponentWrapper>
         )
     },
 ]

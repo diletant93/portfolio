@@ -21,6 +21,7 @@ export type SessionUserType={
 
 export type AuthContextStateType={
     isAuthenticated:boolean;
+    isCheckingAuth:boolean;
     user:SessionUserType | null;
 }
 export type AuthContextValueType={
