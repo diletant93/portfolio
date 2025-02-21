@@ -17,8 +17,5 @@ to set only the THEME_VALUES)
     
 
 
-
-t!)fix the menu:b) when we click outside the menu it should hide (so create the useClickOutside hook)
-t!) registration: handle the situation when there's an existing user by that email when registering
-!2)add the actual login: step by step watch the guide how to do that with suppabase:
+!n) fix the progress bar in the login form (it has 3 stages but must have only 2)
 !3)If we are good we can try to implement multipage registration

@@ -44,10 +44,7 @@ export function AuthForm({ type }: AuthFormProps) {
   }
 
   function onClearForm() {
-    form.reset({
-      ...defaultValues,
-      ...(type === 'registration' ? { fullName: '' } : {}),
-    })
+    form.reset()
     resetValidCount()
   }
 
