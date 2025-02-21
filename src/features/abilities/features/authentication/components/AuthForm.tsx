@@ -42,9 +42,13 @@ export function AuthForm({ type }: AuthFormProps) {
   }
 
   function onClearForm() {
-    form.reset()
+    form.reset({
+      ...defaultValues,
+      ...(type === 'registration' ? { fullName: '' } : {}),
+    })
     resetValidCount()
   }
+
   async function onSubmit(values: z.infer<typeof validationSchema>) {
     if('fullName' in values && typeof values['fullName'] === 'string'){
       await register({fullName:values.fullName, email:values.email , password:values.password})
@@ -96,6 +100,7 @@ export function AuthForm({ type }: AuthFormProps) {
               <FormLabel>Password</FormLabel>
               <FormControl>
                 <Input {...field}
+                  type="password"
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                     triggerField(e, field.onChange, form.trigger, form.clearErrors, 'password')}
                   onBlur={onInputBlur(field.onBlur)} />
@@ -112,6 +117,7 @@ export function AuthForm({ type }: AuthFormProps) {
               <FormLabel>Confirm password</FormLabel>
               <FormControl>
                 <Input {...field}
+                  type="password"
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                     triggerField(e, field.onChange, form.trigger, form.clearErrors, 'confirmPassword')}
                   onBlur={onInputBlur(field.onBlur)} />
@@ -120,7 +126,7 @@ export function AuthForm({ type }: AuthFormProps) {
             </FormItem>
           )}
         />
-        <div className="w-full md:w-1/2 flex flex-col md:flex-row gap-5 mt-5">
+        <div className="w-full flex flex-col gap-5 mt-5">
           <Button type="submit" className="flex-1" disabled={isLoading}>
             {isLoading ? 'Submitting...' : 'Submit'}
           </Button>
