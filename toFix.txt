@@ -17,5 +17,5 @@ to set only the THEME_VALUES)
     
 
 
-!n) fix the progress bar in the login form (it has 3 stages but must have only 2)
+
 !3)If we are good we can try to implement multipage registration

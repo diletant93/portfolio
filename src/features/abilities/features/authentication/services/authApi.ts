@@ -74,6 +74,19 @@ export async function getCurrentUser (){
   }
 }
 
+export async function logoutUser(){
+  try {
+    const {error} = await supabase.auth.signOut()
+    if (error) {
+      console.log("Error while logging out");
+      throw new Error("Could not log out");
+    }
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+}
+
 export async function checkUserExists(email: string) {
   try {
     const { data, error } = await supabase
