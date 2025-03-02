@@ -1,12 +1,10 @@
-import Heading from "@/components/Heading";
+import PageTitle from "@/components/PageTitle";
 import AbilitiesGrid from "@/features/abilities/components/AbilitiesGrid";
 
 export default function Abilities() {
   return (
     <div>
-        <div className="text-center py-10 border-b border-b-secondary">
-            <Heading >Here is what i am capable of...</Heading>
-        </div>
+        <PageTitle>Here is what i am capable of...</PageTitle>
         <AbilitiesGrid/>
     </div>
   );
