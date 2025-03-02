@@ -7,8 +7,6 @@ export function useValidInputsCount<T extends Record<string, string>>(
   errors: FieldErrors<T>,
   isAutoUpdate: boolean = true,
 ) {
-  console.log('Default values',defaultValues)
-
   const [validCount, setValidCount] = useState<number>(0);
   const totalFields = Object.keys(defaultValues).length;
   const watchedValuesKeys = Object.keys(watchedValues);

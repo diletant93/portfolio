@@ -1,8 +1,9 @@
+import { useCallback } from "react";
 import { useToast } from "./use-toast";
 export type ToastVariantType = 'error' | 'notice' | 'success'
 export function useCustomToast() {
     const { toast } = useToast()
-    const customToast = ( message: string, title?:string, variant?:ToastVariantType) => {
+    const customToast = useCallback(( message: string, title?:string, variant?:ToastVariantType) => {
         toast({
             description: (
                 <div className="">
@@ -12,19 +13,19 @@ export function useCustomToast() {
             ),
             variant,
         });
-    }
+    },[toast])
 
-    const errorToast = (message: string, title?:string) =>{
+    const errorToast = useCallback((message: string, title?:string) =>{
         customToast(message, title,'error')
-    }
+    },[customToast])
 
-    const infoToast = (message: string, title?:string) =>{
+    const infoToast = useCallback((message: string, title?:string) =>{
         customToast(message, title,'notice')
-    }
+    },[customToast])
 
-    const successToast = (message: string, title?:string) =>{
+    const successToast = useCallback((message: string, title?:string) =>{
         customToast(message, title,'success')
-    }
+    },[customToast])
 
     return { errorToast, infoToast,successToast }
 }

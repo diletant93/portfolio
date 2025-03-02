@@ -19,6 +19,9 @@
   --primary: 252, 235, 3;
   --secondary: 36, 3, 252;
 }
+.active{
+  @apply bg-secondary text-primary
+}
 
 @layer base {
   body {
@@ -56,7 +59,7 @@
   }
   /* Dialog window */
   .shadcn-card-dialog-content {
-    @apply bg-primary !important;
+    @apply bg-primary min-w-[40%] !important;
   }
   /* Form */
   .shadcn-auth-form {

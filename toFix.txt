@@ -18,4 +18,11 @@ to set only the THEME_VALUES)
 
 
 
+!!n4) fix the registration and login the auth context
+!n1) add the validation for the register that there's already an email
+!n3) add the validation for the login that the password is correct
+!n2) add the validation for the login that there's no such an email
+!n5) add the logout button to login and register
+
+!
 !3)If we are good we can try to implement multipage registration

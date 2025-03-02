@@ -1,5 +1,6 @@
 import AuthComponentWrapper from "../features/authentication/components/AuthComponentWrapper"
 import { AuthForm } from "../features/authentication/components/AuthForm"
+import DebounceShowcase from "../features/debounce/components/DebounceShowcase"
 import { Ability } from "../types/abilityRelated"
 
 export const mainAbilitiesList: Ability[] = [
@@ -33,7 +34,7 @@ export const subAbilitiesList: Ability[] = [
     {
         name: 'Debounce',
         heading: 'Input',
-        abilityCopmonent: null
+        abilityCopmonent: <DebounceShowcase/>
     },
     {
         name: 'Timer',
