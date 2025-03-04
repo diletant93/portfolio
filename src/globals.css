@@ -40,7 +40,7 @@
     @apply flex min-h-screen flex-col;
   }
   .main {
-    @apply flex-1 border-b border-b-secondary pb-5;
+    @apply flex-1 border-b border-b-secondary;
   }
   .header {
     @apply relative z-20 flex items-center border-b border-b-secondary pl-5;
@@ -92,7 +92,7 @@
     @apply grid justify-items-center md:grid-cols-[repeat(auto-fit,minmax(25rem,1fr))];
   }
   .ability-preview {
-    @apply bg-primary px-5 py-20 border border-secondary hover:scale-105 transition-all duration-300;
+    @apply bg-primary px-5 py-24 border border-secondary hover:scale-105 transition-all duration-300;
   }
 }
 @layer utilities {

@@ -1,6 +1,7 @@
 import AuthComponentWrapper from "../features/authentication/components/AuthComponentWrapper"
 import { AuthForm } from "../features/authentication/components/AuthForm"
 import DebounceShowcase from "../features/debounce/components/DebounceShowcase"
+import FilterShowcase from "../features/filter/components/FilterShowcase"
 import { Ability } from "../types/abilityRelated"
 
 export const mainAbilitiesList: Ability[] = [
@@ -26,39 +27,39 @@ export const mainAbilitiesList: Ability[] = [
     },
 ]
 export const subAbilitiesList: Ability[] = [
-    // {
-    //     name: 'Debounce',
-    //     heading: 'Input',
-    //     abilityCopmonent: <DebounceShowcase/>
-    // },
-    // {
-    //     name: 'Debounce',
-    //     heading: 'Input',
-    //     abilityCopmonent: <DebounceShowcase/>
-    // },
-    // {
-    //     name: 'Debounce',
-    //     heading: 'Input',
-    //     abilityCopmonent: <DebounceShowcase/>
-    // },
-    // {
-    //     name: 'Timer',
-    //     heading: 'Timer',
-    //     abilityCopmonent: null
-    // },
-    // {
-    //     name: 'LocalStorage',
-    //     heading: 'LocalStorage',
-    //     abilityCopmonent: null
-    // },
-    // {
-    //     name: 'Media query',
-    //     heading: 'Media query',
-    //     abilityCopmonent: null
-    // },
-    // {
-    //     name: 'Toast',
-    //     heading: 'Toast',
-    //     abilityCopmonent: null
-    // }
+    {
+        name: 'Debounce',
+        heading: 'Input',
+        abilityCopmonent: <DebounceShowcase/>
+    },
+    {
+        name: 'Filter',
+        heading: 'Input',
+        abilityCopmonent: <FilterShowcase/>
+    },
+    {
+        name: 'Debounce',
+        heading: 'Input',
+        abilityCopmonent: null
+    },
+    {
+        name: 'Timer',
+        heading: 'Timer',
+        abilityCopmonent: null
+    },
+    {
+        name: 'LocalStorage',
+        heading: 'LocalStorage',
+        abilityCopmonent: null
+    },
+    {
+        name: 'Media query',
+        heading: 'Media query',
+        abilityCopmonent: null
+    },
+    {
+        name: 'Toast',
+        heading: 'Toast',
+        abilityCopmonent: null
+    }
 ]

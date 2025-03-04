@@ -24,7 +24,7 @@ function EducationList() {
     );
 }
 export default function Education() {
-    
+
     return (
         <div className="max-w-3xl mx-auto p-6 flex flex-col items-center gap-2 w-full">
             <BioHeading>Education</BioHeading>

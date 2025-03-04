@@ -1,5 +1,6 @@
 import { ChangeEvent, useState } from "react";
 import { useDebounce } from "../hooks/useDebounce";
+import { Input } from "@/components/ui/input";
 
 export default function DebounceShowcase() {
   const [value1, setValue1] = useState<string>("");
@@ -12,12 +13,12 @@ export default function DebounceShowcase() {
         <label htmlFor="noDebounce" className="text-sm font-medium mb-1 block">
           Without debounce
         </label>
-        <input
+        <Input
           type="text"
           value={value1}
           onChange={(e: ChangeEvent<HTMLInputElement>) => setValue1(e.target.value)}
           id="noDebounce"
-          className="w-full p-2 border rounded-md text-primary"
+          className="w-full p-2 border rounded-md"
         />
         <p className="mt-2 truncate" title={value1}>
           Result: {value1}
@@ -30,12 +31,12 @@ export default function DebounceShowcase() {
         <label htmlFor="withDebounce" className="text-sm font-medium mb-1 block">
           With debounce
         </label>
-        <input
+        <Input
           type="text"
           value={value2}
           onChange={(e: ChangeEvent<HTMLInputElement>) => setValue2(e.target.value)}
           id="withDebounce"
-          className="w-full p-2 border rounded-md text-primary"
+          className="w-full p-2 border rounded-md"
         />
         <p className="mt-2 truncate" title={debouncedValue}>
           Result: {debouncedValue}
