@@ -1,5 +1,4 @@
 import { Animal } from "../types/animal";
-
 export default function AnimalItem({animal}:{animal:Animal}) {
   return (
     <div className="flex justify-between">

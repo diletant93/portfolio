@@ -7,7 +7,7 @@ export default function FilterShowcase() {
     const [value, setValue] = useState<string>('')
     const [debouncedValue] = useDebounce(value,700)
   return (
-    <div className="">
+    <div className="h-[15rem]">
        <Input
         className="w-full placeholder:text-primary mb-5"
         value={value}

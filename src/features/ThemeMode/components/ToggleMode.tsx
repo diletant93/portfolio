@@ -2,12 +2,9 @@ import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch } from "@/store/store";
 import { setTheme } from "../themeModeSlice/slice";
-import { THEMES_VALUES } from "../constants/themes";
-import Button from "@/components/ui/button";
 import {
     Select,
     SelectContent,
-    SelectItem,
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select"

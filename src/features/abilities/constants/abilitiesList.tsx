@@ -2,6 +2,7 @@ import AuthComponentWrapper from "../features/authentication/components/AuthComp
 import { AuthForm } from "../features/authentication/components/AuthForm"
 import DebounceShowcase from "../features/debounce/components/DebounceShowcase"
 import FilterShowcase from "../features/filter/components/FilterShowcase"
+import SortShowcase from "../features/sort/components/SortShowcase"
 import { Ability } from "../types/abilityRelated"
 
 export const mainAbilitiesList: Ability[] = [
@@ -28,19 +29,19 @@ export const mainAbilitiesList: Ability[] = [
 ]
 export const subAbilitiesList: Ability[] = [
     {
-        name: 'Debounce',
-        heading: 'Input',
-        abilityCopmonent: <DebounceShowcase/>
-    },
-    {
         name: 'Filter',
         heading: 'Filter',
         abilityCopmonent: <FilterShowcase/>
     },
     {
+        name: 'Sort',
+        heading: 'Sort',
+        abilityCopmonent: <SortShowcase/>
+    },
+    {
         name: 'Debounce',
         heading: 'Input',
-        abilityCopmonent: null
+        abilityCopmonent: <DebounceShowcase/>
     },
     {
         name: 'Timer',

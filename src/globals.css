@@ -51,6 +51,12 @@
 
   /* Shadcn */
   /* Selector */
+  .shadcn-selector-trigger{
+    @apply cursor-pointer rounded-none bg-primary px-2 py-4 font-bold uppercase text-secondary hover:bg-secondary hover:text-primary !important;
+  }
+  .shadcn-selector-item{
+    @apply flex h-full gap-2 rounded-none border-none font-bold uppercase text-secondary hover:bg-secondary hover:text-primary cursor-pointer !important;
+  }
   .shadcn-header-selector-trigger {
     @apply flex h-full gap-2 rounded-none border-none font-bold uppercase text-secondary hover:bg-secondary hover:text-primary !important;
   }
@@ -103,9 +109,9 @@
     @apply text-xl font-bold text-secondary sm:text-3xl lg:text-4xl;
   }
 }
-
+/* CUSTOM SCROLL BAR */
 .custom-scrollbar::-webkit-scrollbar {
-  @apply w-2 rounded-xl
+  @apply w-2 rounded-xl p-1
 }
 .custom-scrollbar::-webkit-scrollbar-track {
   @apply bg-transparent
