@@ -1,40 +1,34 @@
+import { EducationItem, educationList } from "@/constants/educationItems";
 import BioHeading from "./BioHeading";
-type EducationItem = {
-    facilityName: string,
-    achievement: string,
-    duration: string
-}
-const educationList: EducationItem[] = [
-    {
-        facilityName: 'Middle School Ukraine ',
-        achievement: 'Gold medal',
-        duration: '2009-2021'
-    },
-    {
-        facilityName: 'Lvil politechnich university',
-        achievement: 'Student of the CS faculty',
-        duration: '2021-2022'
-    },
-]
 
 function EducationElement({ educationItem }: { educationItem: EducationItem }) {
-    return <li>
-        <h4>{educationItem.facilityName}</h4>
-        <p>{educationItem.achievement}</p>
-        <p className="text-sm">{educationItem.duration}</p>
-    </li>
+    return (
+        <li className="p-4 border border-secondary rounded shadow-sm hover:scale-105 hover:shadow-md transition-all duration-300 bg-primary text-secondary cursor-pointer">
+            <h4 className="text-lg font-semibold">{educationItem.facilityName}</h4>
+            <p className="mt-1">{educationItem.achievement}</p>
+            <p className="mt-1 text-sm">{educationItem.duration}</p>
+        </li>
+    );
 }
+
 function EducationList() {
-    return <ul className="space-y-5">
-        {educationList.map(educationItem => <EducationElement key={educationItem.facilityName} educationItem={educationItem} />)}
-    </ul>
+    return (
+        <ul className="grid grid-cols-1 lg:grid-cols-2 gap-2 w-full ">
+            {educationList.map((educationItem) => (
+                <EducationElement
+                    key={educationItem.facilityName}
+                    educationItem={educationItem}
+                />
+            ))}
+        </ul>
+    );
 }
 export default function Education() {
-
+    
     return (
-        <div>
+        <div className="max-w-3xl mx-auto p-6 flex flex-col items-center gap-2 w-full">
             <BioHeading>Education</BioHeading>
-            <EducationList/>
+            <EducationList />
         </div>
     );
 }

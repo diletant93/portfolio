@@ -26,34 +26,39 @@ export const mainAbilitiesList: Ability[] = [
     },
 ]
 export const subAbilitiesList: Ability[] = [
-    {
-        name: 'Input',
-        heading: 'Input',
-        abilityCopmonent: null
-    },
-    {
-        name: 'Debounce',
-        heading: 'Input',
-        abilityCopmonent: <DebounceShowcase/>
-    },
-    {
-        name: 'Timer',
-        heading: 'Timer',
-        abilityCopmonent: null
-    },
-    {
-        name: 'LocalStorage',
-        heading: 'LocalStorage',
-        abilityCopmonent: null
-    },
-    {
-        name: 'Media query',
-        heading: 'Media query',
-        abilityCopmonent: null
-    },
-    {
-        name: 'Toast',
-        heading: 'Toast',
-        abilityCopmonent: null
-    }
+    // {
+    //     name: 'Debounce',
+    //     heading: 'Input',
+    //     abilityCopmonent: <DebounceShowcase/>
+    // },
+    // {
+    //     name: 'Debounce',
+    //     heading: 'Input',
+    //     abilityCopmonent: <DebounceShowcase/>
+    // },
+    // {
+    //     name: 'Debounce',
+    //     heading: 'Input',
+    //     abilityCopmonent: <DebounceShowcase/>
+    // },
+    // {
+    //     name: 'Timer',
+    //     heading: 'Timer',
+    //     abilityCopmonent: null
+    // },
+    // {
+    //     name: 'LocalStorage',
+    //     heading: 'LocalStorage',
+    //     abilityCopmonent: null
+    // },
+    // {
+    //     name: 'Media query',
+    //     heading: 'Media query',
+    //     abilityCopmonent: null
+    // },
+    // {
+    //     name: 'Toast',
+    //     heading: 'Toast',
+    //     abilityCopmonent: null
+    // }
 ]

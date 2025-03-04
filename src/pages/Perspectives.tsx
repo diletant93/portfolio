@@ -5,8 +5,8 @@ export default function Perspectives() {
   return (
     <div>
       <PageTitle>Beyond the Offer: What’s Next for Me</PageTitle>
-      <div className="p-5 ">
-        <p>After mastering front-end development, I want to expand my skill set by diving into backend and cloud technologies. The next areas I’ll explore include:</p>
+      <div className="p-5">
+        <p className="text-xl text-center">After mastering front-end, I'm diving into backend and cloud tech; next, I'll explore:</p>
         <FutureTechnologies/>
       </div>
     </div>
