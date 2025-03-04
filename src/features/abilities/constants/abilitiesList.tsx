@@ -34,7 +34,7 @@ export const subAbilitiesList: Ability[] = [
     },
     {
         name: 'Filter',
-        heading: 'Input',
+        heading: 'Filter',
         abilityCopmonent: <FilterShowcase/>
     },
     {

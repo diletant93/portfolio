@@ -8,8 +8,8 @@ export default function DebounceShowcase() {
   const [debouncedValue] = useDebounce(value2, 300);
 
   return (
-    <div className="flex w-full overflow-hidden">
-      <div className="w-[calc(50%-1px)] overflow-hidden">
+    <div className="flex sm:flex-row flex-col w-full overflow-hidden sm:gap-0 gap-5">
+      <div className="sm:w-[calc(50%-1px)] overflow-hidden">
         <label htmlFor="noDebounce" className="text-sm font-medium mb-1 block">
           Without debounce
         </label>
@@ -25,9 +25,11 @@ export default function DebounceShowcase() {
         </p>
       </div>
 
-      <div className="w-[1px] bg-slate-300 h-[90%] self-center mx-4"></div>
+      <div className="sm:block hidden w-[1px] bg-slate-300 h-[90%] self-center mx-4"></div>
+      
+      <div className="sm:hidden h-[0.5px] w-[90%] bg-slate-300 self-center mx-4"></div>
 
-      <div className="w-[calc(50%-1px)] overflow-hidden">
+      <div className="sm:w-[calc(50%-1px)] overflow-hidden">
         <label htmlFor="withDebounce" className="text-sm font-medium mb-1 block">
           With debounce
         </label>

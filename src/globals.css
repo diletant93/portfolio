@@ -59,7 +59,7 @@
   }
   /* Dialog window */
   .shadcn-card-dialog-content {
-    @apply bg-primary min-w-[40%] !important;
+    @apply bg-primary max-w-[90vw] sm:max-w-[30rem] md:max-w-[40rem] lg:max-w-[45rem] !important;
   }
   /* Form */
   .shadcn-auth-form {
@@ -102,4 +102,17 @@
   .h1 {
     @apply text-xl font-bold text-secondary sm:text-3xl lg:text-4xl;
   }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  @apply w-2 rounded-xl
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-transparent
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-secondary rounded-md
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  @apply bg-[#8f8f8f]
 }

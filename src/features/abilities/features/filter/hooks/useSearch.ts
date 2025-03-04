@@ -1,8 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
-function useSearch() {
+import { getAnimals } from "../services/animals";
+
+function useSearch(animalName:string) {
   const { isLoading, data } = useQuery({
-    queryKey: ["key"],
-    queryFn: () => {}
+    queryKey: ["animals",animalName],
+    queryFn: () => getAnimals(animalName),
+    retry:false,
   });
   return { isLoading, data };
 }
