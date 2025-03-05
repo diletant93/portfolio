@@ -7,6 +7,7 @@ import { LIMIT } from "../constants/pagination"
 export async function fetchAnimals({pageParam}:{pageParam:number}):Promise<FetchAnimalsResult>{
     try {
         const response = await axiosInstance.get<Animal[]>(`/animals?name=cat`)
+        console.log('inside fetchAnimals', response)
         if(response.data.length <=0 ) throw new Error('Could not fetch the animal')
         return {
             data: response.data.slice(pageParam, pageParam + LIMIT),

@@ -5,23 +5,24 @@ import Loader from "@/components/Loader";
 import {useInView} from 'react-intersection-observer'
 
 export default function InfiniteScrollShowcase() {
-    const {data , status, error, isFetchingNextPage, fetchNextPage, resetAnimals} = useInfiniteAnimals()
+    const {data , status, error, isFetchingNextPage, fetchNextPage, resetAnimalsIfCached} = useInfiniteAnimals()
 
     const {ref ,inView} = useInView()
 
     useEffect(()=>{
-        resetAnimals()
+        resetAnimalsIfCached()
     },[])
 
     useEffect(()=>{
         if(inView) fetchNextPage()
     },[inView, fetchNextPage])
 
+    console.log('data',data)
     if(status === 'error') return <div>{error?.message}</div>
-    if(status === 'pending' || !data) return <Loader/>
+    if(status === 'pending' || !data) return <div className="h-[15rem]"><Loader/></div>
     return (
-        <div className="search-list">
-            {data.pages.map((page) =>(
+        <div className="search-list h-[15rem]">
+            {data.pages.map((page) => (
                 <>
                 {page.data.map((animal)=>(
                     <AnimalItem key={animal.name} animal={animal}/>

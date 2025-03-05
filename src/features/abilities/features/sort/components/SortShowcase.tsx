@@ -8,7 +8,7 @@ export default function SortShowcase() {
   return (
     <div className="flex w-full justify-between gap-4 h-[12rem]">
        <SearchResults searchValue="dog" sortValue={option} className="flex-1 pl-3" direction="rtl" render={(animal)=><SortListAnimalItem key={animal.name} animal={animal}/>}/>
-      <AnimalsSort option={option} setOption={setOption} />
+      <AnimalsSort option={option} setOption={setOption} className="ml-auto"/>
     </div>
   );
 }

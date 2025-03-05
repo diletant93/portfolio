@@ -16,11 +16,11 @@ interface SearchResultsProps {
 export default function SearchResults({ searchValue, className, direction = 'ltr', sortValue='name-asc',render}: SearchResultsProps) {
   const { isLoading, data } = useSearch(searchValue === '' ? 'a' : searchValue)
 
-  if (isLoading) return <Loader />
+  if (isLoading) return <div className="w-full h-full relative"><Loader/></div>
   if (!data) return <p>No results</p>
 
   const sortedData = sortByField(data, sortValue)
-  
+
   return (
     <div className={cn("search-list", className, direction === 'ltr' ? '[direction:ltr]' : '[direction:rtl]')}>
       {isLoading? <Loader/> :(

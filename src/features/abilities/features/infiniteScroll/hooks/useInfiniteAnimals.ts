@@ -5,11 +5,16 @@ export function useInfiniteAnimals(){
     const {data, status,error, isFetchingNextPage, fetchNextPage} = useInfiniteQuery({
         queryKey:['infiniteAnimals'],
         queryFn: fetchAnimals,
-        initialPageParam:0,
+        initialPageParam:0, 
         getNextPageParam:(lastPage) => lastPage.nextPage,
     })
     const queryClient = useQueryClient()
-    const resetAnimals = () => queryClient.removeQueries({ queryKey: ['infiniteAnimals'] });
+    const resetAnimalsIfCached = () => {
+        const cachedData = queryClient.getQueryData(['infiniteAnimals']);
+        if (cachedData) {
+            queryClient.removeQueries({ queryKey: ['infiniteAnimals'] });
+        }
+    };
 
-    return {data , status, error, isFetchingNextPage, fetchNextPage,resetAnimals}
+    return {data , status, error, isFetchingNextPage, fetchNextPage,resetAnimalsIfCached}
 }
