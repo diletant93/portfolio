@@ -1,13 +1,5 @@
-import axios from "axios";
 import { Animal } from "../types/animal";
-
-const axiosInstance = axios.create({
-  baseURL: "https://api.api-ninjas.com/v1",
-  headers: {
-    "X-Api-Key": import.meta.env.VITE_ANIMALS_API_KEY,
-    "Content-Type": "application/json",
-  },
-});
+import { axiosInstance } from "@/lib/axios/config";
 
 export async function getAnimals(animalName:string): Promise<Animal[]> {
   try {

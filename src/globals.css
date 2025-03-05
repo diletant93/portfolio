@@ -100,6 +100,9 @@
   .ability-preview {
     @apply bg-primary px-5 py-24 border border-secondary hover:scale-105 transition-all duration-300;
   }
+  .search-list{
+    @apply h-[20vh] overflow-y-auto custom-scrollbar p-1 pr-3 border border-secondary rounded-sm relative
+  }
 }
 @layer utilities {
   .flex-center {

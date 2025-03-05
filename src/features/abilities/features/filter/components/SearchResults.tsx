@@ -20,9 +20,9 @@ export default function SearchResults({ searchValue, className, direction = 'ltr
   if (!data) return <p>No results</p>
 
   const sortedData = sortByField(data, sortValue)
-  console.log('sortedData',sortedData)
+  
   return (
-    <div className={cn("h-[20vh] overflow-y-auto custom-scrollbar p-1 pr-3 border border-secondary rounded-sm relative", className, direction === 'ltr' ? '[direction:ltr]' : '[direction:rtl]')}>
+    <div className={cn("search-list", className, direction === 'ltr' ? '[direction:ltr]' : '[direction:rtl]')}>
       {isLoading? <Loader/> :(
       <div className="[direction:ltr]">
         {sortedData?.map(animal =>render? render(animal) : <AnimalItem animal={animal} key={animal.name} />)}
