@@ -1,0 +1,2 @@
+export const ITEMS_PER_PAGE = 5
+export const VISIBLE_PAGINATION_BUTTONS = 3

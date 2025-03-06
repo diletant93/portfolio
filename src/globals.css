@@ -92,6 +92,20 @@
   .shadcn-burger-button {
     @apply border-0 bg-transparent px-4 py-4 flex-col h-full !important;
   }
+  /* Card */
+  .shadcn-card{
+    @apply bg-primary border-none shadow-none !important
+  }
+  /* Pagination */
+  .shadcn-pagination-button{
+    @apply bg-primary border border-secondary hover:bg-secondary hover:text-primary rounded-none cursor-pointer text-secondary !important
+  }
+  .shadcn-pagination-button-active{
+    @apply bg-secondary text-primary !important
+  }
+  .shadcn-pagination-ellipsis{
+    @apply bg-primary border border-secondary  rounded-none cursor-pointer text-secondary !important
+  }
   /* abilities */
   .abilities-grid {
     /* the justify-center items-center is temporary*/
