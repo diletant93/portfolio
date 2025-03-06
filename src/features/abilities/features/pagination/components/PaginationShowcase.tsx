@@ -8,17 +8,18 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
-import { useState } from "react";
 import { ITEMS_PER_PAGE, VISIBLE_PAGINATION_BUTTONS } from "../constants/paginationLimit";
-import { getPaginationInfo, getPaginationNumbers } from "../utils/paginationFunctions";
+import usePagination from "../hooks/usePagination";
+import { Animal } from "../../filter/types/animal";
 export default function PaginationShowcase() {
     const { data, isLoading } = useSearch('cat', 100)
-    const [currentPage, setCurrentPage] = useState<number>(1)
+
+    const { currentPage, setCurrentPage,
+        totalPages, getPaginationNumbers,
+        currentItems
+    } = usePagination<Animal>(data, ITEMS_PER_PAGE, VISIBLE_PAGINATION_BUTTONS)
 
     if (isLoading || !data) return <Loader />
-
-    const { startIndex, endIndex, totalPages } = getPaginationInfo(currentPage, data.length, ITEMS_PER_PAGE)
-    const currentItems = data.slice(startIndex, endIndex) || []
 
     return (
         <div>
@@ -33,9 +34,8 @@ export default function PaginationShowcase() {
                     <ListPagination
                         currentPage={currentPage}
                         setCurrentPage={setCurrentPage}
-                        itemsLength={data.length}
-                        pageNumbers={getPaginationNumbers(currentPage, totalPages, VISIBLE_PAGINATION_BUTTONS)}
-                        elementsPerPage={ITEMS_PER_PAGE} />
+                        pageNumbers={getPaginationNumbers()}
+                        totalPages={totalPages} />
                 </CardContent>
             </Card>
         </div>

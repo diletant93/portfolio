@@ -11,17 +11,11 @@ import ListPaginationItem from "./ListPaginationItem";
 type ListPaginationProps ={
     currentPage: number;
     setCurrentPage: React.Dispatch<SetStateAction<number>>
-    itemsLength:number;
     pageNumbers:(number | 'ellipsis')[]; 
-    elementsPerPage:number;
+    totalPages:number;
 }
-export default function ListPagination({currentPage,setCurrentPage,itemsLength, pageNumbers, elementsPerPage}:ListPaginationProps) {
-
-    if(itemsLength <= 0) return null
-
-    const totalItems = itemsLength
-    const totalPages = Math.ceil(totalItems/elementsPerPage)
-
+export default function ListPagination({currentPage,setCurrentPage,totalPages, pageNumbers,}:ListPaginationProps) {
+    if (totalPages <= 1) return null;
     return (
         <Pagination>
             <PaginationContent>
