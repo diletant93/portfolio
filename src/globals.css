@@ -94,7 +94,13 @@
   }
   /* Card */
   .shadcn-card{
-    @apply bg-primary border-none shadow-none !important
+    @apply bg-primary border-none shadow-none flex flex-col gap-2 sm:block !important
+  }
+  .shadcn-card-header{
+    @apply p-0 sm:p-2 bg-primary text-secondary border-none !important
+  }
+  .shadcn-card-content{
+    @apply p-0 sm:p-4 bg-primary !important
   }
   /* Pagination */
   .shadcn-pagination-button{
