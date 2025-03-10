@@ -112,6 +112,10 @@
   .shadcn-pagination-ellipsis{
     @apply bg-primary border border-secondary  rounded-none cursor-pointer text-secondary !important
   }
+  /* Button */
+  .shadcn-button{
+    @apply bg-primary text-secondary border border-secondary transition-all duration-300 hover:bg-secondary hover:text-primary rounded-none !important
+  }
   /* abilities */
   .abilities-grid {
     /* the justify-center items-center is temporary*/

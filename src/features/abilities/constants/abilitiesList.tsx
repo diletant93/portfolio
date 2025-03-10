@@ -4,6 +4,7 @@ import DebounceShowcase from "../features/debounce/components/DebounceShowcase"
 import FilterShowcase from "../features/filter/components/FilterShowcase"
 import InfiniteScrollShowcase from "../features/infiniteScroll/components/InfiniteScrollShowcase"
 import PaginationShowcase from "../features/pagination/components/PaginationShowcase"
+import CartShowcase from "../features/shopingCart/components/CartShowcase"
 import SortShowcase from "../features/sort/components/SortShowcase"
 import { Ability } from "../types/abilityRelated"
 
@@ -57,9 +58,8 @@ export const subAbilitiesList: Ability[] = [
         abilityCopmonent: <PaginationShowcase/>
     },
     {
-        name: 'Media query',
-        heading: 'Media query',
-        abilityCopmonent: null
+        name: 'Cart',
+        abilityCopmonent: <CartShowcase/>
     },
     {
         name: 'Toast',
