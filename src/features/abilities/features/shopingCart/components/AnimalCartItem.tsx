@@ -19,7 +19,7 @@ export default function AnimalCartItem({animalItem}:{animalItem:CartItem}) {
     dispatch(setAnimalQuantity({name:item.name, quantity}))
   }
   return (
-    <div className="flex justify-between border-b border-b-secondary last:border-b-0 p-3 gap-2">
+    <div className="flex justify-between border-b border-b-secondary last:border-b-0 p-3 gap-1">
        <p className="w-[160px] sm:w-auto truncate sm:overflow-visible sm:whitespace-normal sm:[text-overflow:clip]">{animalItem.animal.name}</p>
        <Controls
         item={{id:animalItem.animal.name , quantity: animalItem.quantity, ...animalItem.animal}} 

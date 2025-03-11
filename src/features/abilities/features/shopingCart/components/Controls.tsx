@@ -15,7 +15,7 @@ export default function Controls<T extends Controllable>({
     const [inputValue, setInputValue] = useState<string>(item.quantity?.toString() || '1')
 
     function handleBlur(e: ChangeEvent<HTMLInputElement>) {
-        if (e.target.value === '') {
+        if (e.target.value === '' || +e.target.value < 0) {
             const defaultValue = min > 0 ? min : 1
             setInputValue(defaultValue.toString())
             onSetQuantity(item, defaultValue)
@@ -26,10 +26,10 @@ export default function Controls<T extends Controllable>({
             onSetQuantity(item, clamped)
         }
     }
-    
+
     function handleOnChange(e: ChangeEvent<HTMLInputElement>) {
         setInputValue(e.target.value)
-        if (e.target.value !== '') {
+        if (e.target.value !== '' && +e.target.value > 0) {
             onSetQuantity(item, +e.target.value)
         }
     }
