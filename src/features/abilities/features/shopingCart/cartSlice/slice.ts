@@ -1,41 +1,66 @@
-import { RootState } from "@/store/store";
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { Animal } from "../../filter/types/animal";
+import { CartItem, CartState } from "../types/cartSliceRelated";
 
-type CartState = {
-    variable:string;
-}
-const INITIAL_STATE : CartState = {
-    variable:'asdasdasd'
-}
+const INITIAL_STATE: CartState = {
+  status: "loading",
+  error: "",
+  items: [],
+};
 
 const cartSlice = createSlice({
-    name:'cart',
-    initialState: INITIAL_STATE,
-    reducers:{
-        setVariable(state, action:PayloadAction<string>){
-            state.variable = action.payload
-        },
-        showVariable(state){
-            console.log(state.variable)
-        }
-
+  name: "cart",
+  initialState: INITIAL_STATE,
+  reducers: {
+    addAnimal(state, action: PayloadAction<Animal>) {
+      const findIndex = state.items.findIndex(
+        (item) => item.animal.name === action.payload.name,
+      );
+      if (findIndex >= 0) {
+        state.items[findIndex].quantity += 1;
+      } else {
+        state.items.push({
+          animal: action.payload,
+          quantity: 1,
+        });
+      }
     },
-    extraReducers:(builder)=>{
-        builder.addCase(showVariableAsync.fulfilled, (state,action) =>{
-            console.log(action.payload)
-        })
-    }
-})
+    removeAnimal(state, action: PayloadAction<string>) {
+      const findIndex = state.items.findIndex(
+        (item) => item.animal.name === action.payload    
+      );
+      if (findIndex >= 0) {
+        state.items[findIndex].quantity -= 1;
+        if (state.items[findIndex].quantity <= 0) {
+          console.log('im here')
+          state.items = state.items.filter((item) => item.animal.name !== action.payload);
+        }
+      }
+    },
+    removeAnimalCompletely(state, action: PayloadAction<string>) {
+      state.items = state.items.filter((item) => item.animal.name !== action.payload);
+    },
+    setAnimalQuantity(
+      state,
+      action: PayloadAction<{ name: string; quantity: number }>,
+    ) {
+      const { name, quantity } = action.payload;
+      const findIndex = state.items.findIndex(
+        (item) => item.animal.name === name,
+      );
+      if (quantity <= 0) {
+        state.items = state.items.filter((item) => item.animal.name !== name);
+      } else if (findIndex >= 0) {
+        state.items[findIndex].quantity = quantity;
+      }
+    },
+  },
+});
 
-export const showVariableAsync = createAsyncThunk<Promise<string>,void,{state:RootState}>(
-    'cart/showVaribaleAsync',
-    async (_,{getState}) =>{
-        await new Promise((resolve) => setTimeout(resolve,1000))
-        const state = getState() 
-        const variable = state.cartReducer.variable
-        return variable
-    }
-)
-
-export const {setVariable, showVariable} = cartSlice.actions
-export default cartSlice.reducer
+export const {
+  addAnimal,
+  removeAnimal,
+  removeAnimalCompletely,
+  setAnimalQuantity,
+} = cartSlice.actions;
+export default cartSlice.reducer;

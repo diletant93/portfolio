@@ -1,7 +1,8 @@
-export default function CartTotal() {
+export default function CartTotal({number}:{number:number}) {
+    if(number < 0) return <div>No items selected</div>
   return (
-    <div className="border border-secondary">
-       Items in the cart: ITEMS
+    <div >
+       Items in the cart: {number}
     </div>
   );
 }

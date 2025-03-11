@@ -2,8 +2,11 @@ import Separator from "@/features/abilities/components/Separator";
 import AnimalsList from "./AnimalsList";
 import Cart from "./Cart";
 import CartTotal from "./CartTotal";
+import { useSelector } from "react-redux";
+import { selectItems } from "../cartSlice/selectors";
 
 export default function CartShowcase() {
+    const cart = useSelector(selectItems)
     return (
         <div className="flex flex-col gap-4">
             <div className="flex md:flex-row flex-col md:h-[15rem] h-[40vh]">
@@ -13,7 +16,7 @@ export default function CartShowcase() {
                     <Cart />
                 </div>
             </div>
-            <CartTotal/>
+            <CartTotal number={cart.length} />
         </div>
     );
 }
