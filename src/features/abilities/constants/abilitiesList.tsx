@@ -1,6 +1,7 @@
 import AuthComponentWrapper from "../features/authentication/components/AuthComponentWrapper"
 import { AuthForm } from "../features/authentication/components/AuthForm"
 import DebounceShowcase from "../features/debounce/components/DebounceShowcase"
+import FileUploaderShowcase from "../features/fileUploader/components/FileUploaderShowcase"
 import FilterShowcase from "../features/filter/components/FilterShowcase"
 import InfiniteScrollShowcase from "../features/infiniteScroll/components/InfiniteScrollShowcase"
 import PaginationShowcase from "../features/pagination/components/PaginationShowcase"
@@ -62,8 +63,8 @@ export const subAbilitiesList: Ability[] = [
         abilityCopmonent: <CartShowcase/>
     },
     {
-        name: 'Toast',
+        name: 'File Uploader',
         heading: 'Toast',
-        abilityCopmonent: null
+        abilityCopmonent: <FileUploaderShowcase/>
     }
 ]
