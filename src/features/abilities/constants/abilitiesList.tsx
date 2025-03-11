@@ -64,7 +64,7 @@ export const subAbilitiesList: Ability[] = [
     },
     {
         name: 'File Uploader',
-        heading: 'Toast',
+        heading: 'File Uploader',
         abilityCopmonent: <FileUploaderShowcase/>
     }
 ]

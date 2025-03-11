@@ -23,12 +23,12 @@ export default function PaginationShowcase() {
 
     return (
         <div>
-            <Card className="shadcn-card min-h-[15rem]">
+            <Card className="shadcn-card">
                 <CardHeader className="shadcn-card-header">
                     <CardTitle>Animals List</CardTitle>
                 </CardHeader>
                 <CardContent className="shadcn-card-content">
-                    <div className="search-list mb-4 text-secondary">
+                    <div className="search-list mb-4 text-secondary h-[10rem]">
                         {currentItems?.map(animal => <AnimalItem animal={animal} key={animal.name} />)}
                     </div>
                     <ListPagination

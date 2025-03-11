@@ -29,7 +29,7 @@ export default function InfiniteScrollShowcase() {
                 ))}
                 </>
             ))}
-            <div ref={ref}>{isFetchingNextPage && <p className="p-1 text-center">Loading</p>}</div>
+            <div ref={ref}>{isFetchingNextPage && <p className="p-6 text-center">Loading...</p>}</div>
         </div>
     );
 }

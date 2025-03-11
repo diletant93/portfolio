@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { useDeleteFile } from "../hooks/useDeleteFile";
-import {useOptimistic} from 'react'
 export default function FileListItem({name}:{name:string}) {
     const {isDeleting, deleteFile} = useDeleteFile()
     function handleDelete(){
