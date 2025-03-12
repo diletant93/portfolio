@@ -14,10 +14,10 @@ export default function Navigation() {
           <DesktopNavigation />
         ):(
           <>
-          <div className="border-l border-l-white ">
+          <div className="border-l border-l-secondary z-50">
             <Burger />
           </div>
-          <MobileNavigation />
+          <MobileNavigation/>
           </>
         )}
       </OpenStateProvider>

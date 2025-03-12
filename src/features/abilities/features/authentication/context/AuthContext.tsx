@@ -41,9 +41,7 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
             setIsCheckingAuth(false)
         }
     },[errorToast])
-    console.log('context')
     useEffect(() => {
-        console.log('works is auth')
         getSessionUser()
     }, [getSessionUser])
 
