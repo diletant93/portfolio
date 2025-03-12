@@ -1,5 +1,6 @@
 import AuthComponentWrapper from "../features/authentication/components/AuthComponentWrapper"
 import { AuthForm } from "../features/authentication/components/AuthForm"
+import ChartsShowcase from "../features/charts/components/ChartsShowcase"
 import DatePickerShowcase from "../features/datePicker/components/DatePickerShowcase"
 import DebounceShowcase from "../features/debounce/components/DebounceShowcase"
 import FileUploaderShowcase from "../features/fileUploader/components/FileUploaderShowcase"
@@ -71,7 +72,7 @@ export const subAbilitiesList: Ability[] = [
     {
         name: 'Charts',
         heading: 'Chart',
-        abilityCopmonent: <FileUploaderShowcase/>
+        abilityCopmonent: <ChartsShowcase/>
     },
     {
         name:'Date Picker',

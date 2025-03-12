@@ -37,10 +37,10 @@
     @apply mx-auto max-w-[80rem] border-secondary sm:border;
   }
   .content {
-    @apply flex min-h-screen flex-col;
+    @apply flex h-[100vh] sm:h-[97vh] flex-col;
   }
   .main {
-    @apply flex-1 border-b border-b-secondary;
+    @apply flex-1 border-b border-b-secondary ;
   }
   .header {
     @apply relative z-20 flex items-center border-b border-b-secondary pl-5;
@@ -119,10 +119,16 @@
   /* abilities */
   .abilities-grid {
     /* the justify-center items-center is temporary*/
-    @apply grid justify-items-center md:grid-cols-[repeat(auto-fit,minmax(25rem,1fr))];
+    @apply grid justify-items-center  md:grid-cols-[repeat(auto-fit,minmax(25rem,1fr))];
+  }
+  .abilities-subgrid{
+    @apply auto-rows-fr
+  }
+  .abilities-maingrid{
+    @apply lg:auto-rows-[15rem]  md:auto-rows-[10rem] auto-rows-[8rem]
   }
   .ability-preview {
-    @apply bg-primary px-5 py-24 border border-secondary hover:scale-105 transition-all duration-300;
+    @apply bg-primary h-full border border-secondary hover:scale-105 transition-all duration-300 flex-center;
   }
   /* search list */
   .search-list{
@@ -144,6 +150,18 @@
   }
   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     @apply bg-[#8f8f8f]
+  }
+  /* recharts */
+  .custom-tooltip {
+    @apply bg-transparent text-secondary p-4 shadow-lg border border-secondary;
+  }
+  
+  .tooltip-label {
+    @apply font-bold text-lg mb-2;
+  }
+  
+  .tooltip-item {
+    @apply text-base leading-relaxed;
   }
   
 }
