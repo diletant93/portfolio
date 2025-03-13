@@ -4,7 +4,7 @@ import ProjectCard from "./ProjectCard";
 
 function ProjectsList() {
   return (
-    <ul className="flex justify-evenly gap-5">
+    <ul className="grid auto-rows-fr grid-cols-[repeat(auto-fit,minmax(15rem,1fr))] gap-5">
       {projectsArray.map(project => (
         <ProjectCard key={project.imgUrl} project={project} />
       ))}

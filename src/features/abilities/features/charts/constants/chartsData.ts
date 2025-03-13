@@ -14,11 +14,11 @@ export const trafficAccidentsData = [
   ];
   
   export const planeCrashData = [
-    { name: 'Jan-Feb', planeCrashes: 120 + 150 }, // 270
-    { name: 'Mar-Apr', planeCrashes: 110 + 180 }, // 290
-    { name: 'May-Jun', planeCrashes: 200 + 170 }, // 370
-    { name: 'Jul-Aug', planeCrashes: 190 + 160 }, // 350
-    { name: 'Sep-Oct', planeCrashes: 210 + 230 }, // 440
-    { name: 'Nov-Dec', planeCrashes: 200 + 250 }  // 450
+    { name: 'Jan-Feb', planeCrashes: 120 + 150 }, 
+    { name: 'Mar-Apr', planeCrashes: 110 + 180 }, 
+    { name: 'May-Jun', planeCrashes: 200 + 170 }, 
+    { name: 'Jul-Aug', planeCrashes: 190 + 160 }, 
+    { name: 'Sep-Oct', planeCrashes: 210 + 230 }, 
+    { name: 'Nov-Dec', planeCrashes: 200 + 250 }  
   ];
   

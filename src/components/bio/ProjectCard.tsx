@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 export default function ProjectCard({ project }: { project: ProjectEntity }) {
   return (
     <Link
-      to={'/'}
-      className="group relative w-1/3 bg-primary outline outline-secondary outline-2 rounded-sm shadow-md hover:shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300 cursor-pointer"
+      to={project.projectUrl}
+      target="_blank"
+      className="group relative flex-1 bg-primary outline outline-secondary outline-2 rounded-sm shadow-md hover:shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300 cursor-pointer"
     >
       <div className="relative w-full h-40 overflow-hidden">
         <img

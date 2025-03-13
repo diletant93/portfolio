@@ -2,9 +2,12 @@ export type TechologyItem={
     name:string
 }
 export const technologyList: TechologyItem[] = [
-    { name: 'C# ASP.NET' },
     { name: 'Express.js' },
-    { name: 'GraphQL & Apollo Server' },
+    { name: 'C# ASP.NET' },
     { name: 'Docker & Kubernetes' },
-    { name: 'MongoDB' }
+    { name: 'Cloud Computing Platforms (e.g., AWS, Azure, Google Cloud)' },
+    { name: 'DevOps Practices and Tools (e.g., Jenkins, Terraform)' },
+    { name: 'Artificial Intelligence and Machine Learning' },
+    { name: 'Open-Source AI Frameworks (e.g., TensorFlow, PyTorch)' },
   ];
+  

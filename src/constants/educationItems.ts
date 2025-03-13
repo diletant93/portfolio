@@ -16,9 +16,4 @@ export const educationList: EducationItem[] = [
         achievement: "Student of the CS faculty",
         duration: "2021-2022",
     },
-    {
-        facilityName: "Lvil politechnich university",
-        achievement: "Student of the CS faculty",
-        duration: "2021-2022",
-    },
 ];

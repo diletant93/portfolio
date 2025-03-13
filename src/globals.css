@@ -61,7 +61,10 @@
     @apply flex h-full gap-2 rounded-none border-none font-bold uppercase text-secondary hover:bg-secondary hover:text-primary !important;
   }
   .shadcn-header-selector-item {
-    @apply cursor-pointer rounded-none bg-primary px-2 py-4 font-bold uppercase text-secondary hover:bg-secondary hover:text-primary !important;
+    @apply cursor-pointer rounded-none bg-primary px-2 py-4 font-bold uppercase text-secondary hover:bg-secondary hover:text-primary border-b-2 border-b-secondary last:border-b-0 !important;
+  }
+  .shadcn-header-selector-content{
+    @apply border-2 border-secondary rounded-none !important
   }
   /* Dialog window */
   .shadcn-card-dialog-content {
@@ -171,6 +174,12 @@
   }
   .h1 {
     @apply text-xl font-bold text-secondary sm:text-3xl lg:text-4xl;
+  }
+  .h2 {
+    @apply text-lg font-bold text-secondary sm:text-2xl lg:text-3xl;
+  }
+  .h3{
+    @apply text-base font-bold text-secondary sm:text-xl lg:text-2xl;
   }
 }
 /* CUSTOM SCROLL BAR */
