@@ -1,5 +1,6 @@
 import AuthComponentWrapper from "../features/authentication/components/AuthComponentWrapper"
 import { AuthForm } from "../features/authentication/components/AuthForm"
+import { getCurrentUser } from "../features/authentication/services/authApi"
 import ChartsShowcase from "../features/charts/components/ChartsShowcase"
 import DatePickerShowcase from "../features/datePicker/components/DatePickerShowcase"
 import DebounceShowcase from "../features/debounce/components/DebounceShowcase"
@@ -20,7 +21,7 @@ export const mainAbilitiesList: Ability[] = [
             <AuthComponentWrapper>
                 <AuthForm type="registration" />
             </AuthComponentWrapper>
-        )
+        ),
     },
     {
         name: 'Login',

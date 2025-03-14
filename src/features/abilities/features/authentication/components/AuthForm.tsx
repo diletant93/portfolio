@@ -24,6 +24,7 @@ import { useAuthentication } from "../context/AuthContext"
 
 export function AuthForm({ type }: AuthFormProps) {
   const [defaultValues, validationSchema] = getFormInitialInstances(type)
+  const {refreshAuth} = useAuthentication()
   const form = useForm<z.infer<typeof validationSchema>>({
     resolver: zodResolver(validationSchema),
     defaultValues: defaultValues,
@@ -57,6 +58,7 @@ export function AuthForm({ type }: AuthFormProps) {
     if (!('fullName' in values)) {
       await login({ email: values.email, password: values.password })
     }
+    refreshAuth()
   }
   if(isCheckingAuth) return <div>Checking...</div>  
   if(isAuthenticated) return <div>Already logged in</div>

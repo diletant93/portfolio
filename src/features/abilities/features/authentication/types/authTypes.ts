@@ -23,6 +23,7 @@ export type AuthContextStateType={
     isAuthenticated:boolean;
     isCheckingAuth:boolean;
     user:SessionUserType | null;
+    refreshAuth:()=>Promise<void>
 }
 export type AuthContextValueType={
     isAuthenticated:boolean;

@@ -10,6 +10,7 @@ import { Ability } from "../types/abilityRelated";
 import AbilityPreview from "./AbilityPreview";
   
 export default function ModalCard({ability}:{ability:Ability}) {
+  
   return (
     <Dialog>
     <DialogTrigger className="w-full">

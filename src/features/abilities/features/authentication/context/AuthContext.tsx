@@ -6,6 +6,7 @@ const INITIAL_STATE: AuthContextStateType = {
     isAuthenticated: false,
     isCheckingAuth:false,
     user: null,
+    refreshAuth:async ()=> {}
 }
 const AuthContext = createContext(INITIAL_STATE);
 function AuthProvider({ children }: { children: React.ReactNode }) {
@@ -24,13 +25,17 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
     const getSessionUser = useCallback( async function () {
         try {
             setIsCheckingAuth(true)
+            console.log('i am here')
             const user = await getCurrentUser()
-            console.log(user)
             if (user) {
+                console.log('i also went here , so we are logged in')
                 setIsAuthenticated(true)
                 setSessionUser(user)
             }
-            else logout()
+            else {
+                console.log('we are not logged in , logging out')
+                logout()
+            }
 
         } catch (error : unknown) {
             if(error instanceof Error){
@@ -49,6 +54,7 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
         isAuthenticated,
         isCheckingAuth,
         user: sessionUser,
+        refreshAuth:getSessionUser
     }
     return (
         <AuthContext.Provider value={value}>

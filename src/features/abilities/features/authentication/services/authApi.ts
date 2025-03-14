@@ -64,8 +64,7 @@ export async function getCurrentUser (){
   try {
     const { data, error } = await supabase.auth.getUser();
     if (error) {
-      console.log("Error while checking user session");
-      throw new Error("Could not check user session");
+      return
     }
     return data.user as SessionUserType;
   } catch (error) {
