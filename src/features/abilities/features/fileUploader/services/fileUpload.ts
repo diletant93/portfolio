@@ -1,6 +1,4 @@
 import { supabase } from "@/lib/supabase/config";
-
-const STORAGE_PATH = "https://khcxakjuyxjoiveporyb.supabase.co/storage/v1/s3";
 export async function uploadFile(file: File) {
   const fileName = `${file.name}-${Math.random()}`;
   const { data, error } = await supabase.storage

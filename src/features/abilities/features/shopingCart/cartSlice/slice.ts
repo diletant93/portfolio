@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Animal } from "../../filter/types/animal";
-import { CartItem, CartState } from "../types/cartSliceRelated";
+import { CartState } from "../types/cartSliceRelated";
 
 const INITIAL_STATE: CartState = {
   status: "loading",

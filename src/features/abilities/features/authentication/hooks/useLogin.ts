@@ -7,7 +7,7 @@ function useLogin() {
   const {errorToast,successToast} = useCustomToast()
   const { isPending:isLoggingIn, mutateAsync:login } = useMutation({
     mutationFn:({email,password}:SignInUserType)=> signInUser({email,password}),
-    onSuccess: (data) => {
+    onSuccess: () => {
       successToast('Logged in')  
     },
     onError: (err) =>{errorToast(err.message)} 

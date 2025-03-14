@@ -1,4 +1,4 @@
-import { ResponsiveContainer, PieChart as PieChartComponent, Pie, Sector, Cell, Legend, Tooltip } from "recharts";
+import { ResponsiveContainer, PieChart as PieChartComponent, Pie, Cell, Legend, Tooltip } from "recharts";
 import { planeCrashData } from "../constants/chartsData";
 import { COLORS } from "../constants/pieChartColors";
 import CustomTooltip from "./CustomTooltip";
@@ -16,11 +16,11 @@ export default function PieChart() {
                     data={planeCrashData}
                     cx='50%'
                     cy='50%'
-                    dataKey="planeCrashes"   // 🔴 This should point to your numerical values
+                    dataKey="planeCrashes"
                     nameKey="name"
                     outerRadius={80}
                 >
-                    {planeCrashData.map((item, index) => (
+                    {planeCrashData.map((_, index) => (
                         <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                     ))}
                 </Pie>
