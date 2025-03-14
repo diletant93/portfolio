@@ -1,7 +1,7 @@
 import PageTitle from "@/components/PageTitle";
 import FutureTechnologies from "@/components/technologies/FutureTechnologies";
 
-export default function Perspectives() {
+export default function Prospects() {
   return (
     <div>
       <PageTitle>Beyond the Offer: What’s Next for Me</PageTitle>

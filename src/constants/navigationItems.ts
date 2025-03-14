@@ -12,7 +12,7 @@ export const navigationItems : navigationItemType[] =[
         label:'Abilities'
     },
     {
-         path:'/perspectives',
-        label:'Perspectives'
+         path:'/prospects',
+        label:'prospects'
     },
 ]

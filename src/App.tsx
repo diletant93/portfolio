@@ -4,7 +4,8 @@ import Layout from "./layouts/Layout";
 import Home from "./pages/Home";
 import Abilities from "./pages/Abilities";
 import Bio from "./pages/Bio";
-import Perspectives from "./pages/Perspectives";
+import Prospects from "./pages/Prospects";
+import PageNotFound from "./components/PageNotFound";
 
 function App() {
   useThemeMode();
@@ -14,7 +15,8 @@ function App() {
         <Route index element={<Home />} />
         <Route path="/bio" element={<Bio/>}/>
         <Route path="/abilities" element={<Abilities/>}/>
-        <Route path="/perspectives" element={<Perspectives/>}/>
+        <Route path="/prospects" element={<Prospects/>}/>
+        <Route path="*" element={<PageNotFound/>}/>
       </Route>
     </Routes>
   )

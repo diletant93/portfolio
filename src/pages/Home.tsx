@@ -1,6 +1,6 @@
 import BigSocials from "@/components/BigSocials";
 import Heading from "@/components/Heading";
-import IntroSection from "@/components/home/IntroSection";
+import IntroSection from "@/components/home/IntroSection";;
 
 export default function Home() {
   return (

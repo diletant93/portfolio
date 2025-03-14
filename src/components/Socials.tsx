@@ -1,18 +1,31 @@
 import { cn } from "@/lib/utils";
+import { Link } from "react-router-dom";
 
 export default function Socials() {
   const socialStyles = 'h-8 aspect-square fill-secondary hover:fill-primary transition-all duration-300 cursor-pointer'
-  const hoverStyles ={
-    facebook:'hover:fill-blue-600',
-    instagram:'hover:fill-pink-600',
-    linkedin:'hover:fill-blue-400'
+  const hoverStyles = {
+    facebook: 'hover:fill-blue-600',
+    instagram: 'hover:fill-pink-600',
+    linkedin: 'hover:fill-blue-400'
   }
   return (
     <ul className="flex gap-2">
-      <li><FacebookIcon className={cn(socialStyles, hoverStyles['facebook'])} /></li>
-      <li><InstagramIcon className={cn(socialStyles, hoverStyles['instagram'])} /></li>
-      <li><LinkedinIcon className={cn(socialStyles, hoverStyles['linkedin'])} /></li>
-    </ul>
+      <li>
+        <Link to='https://www.facebook.com/' target="_blank">
+          <FacebookIcon className={cn(socialStyles, hoverStyles['facebook'])} />
+        </Link>
+      </li>
+      <li>
+        <Link to='https://www.instagram.com/' target="_blank">
+          <InstagramIcon className={cn(socialStyles, hoverStyles['instagram'])} />
+        </Link>
+      </li>
+      <li>
+        <Link to='https://www.linkedin.com/' target="_blank">
+          <LinkedinIcon className={cn(socialStyles, hoverStyles['linkedin'])} />
+        </Link>
+      </li>
+    </ul >
   );
 }
 
