@@ -19,25 +19,27 @@ export default function PaginationShowcase() {
         currentItems
     } = usePagination<Animal>(data, ITEMS_PER_PAGE, VISIBLE_PAGINATION_BUTTONS)
 
-    if (isLoading || !data) return <Loader />
 
     return (
-        <div>
-            <Card className="shadcn-card">
-                <CardHeader className="shadcn-card-header">
-                    <CardTitle>Animals List</CardTitle>
-                </CardHeader>
-                <CardContent className="shadcn-card-content">
-                    <div className="search-list mb-4 text-secondary h-[10rem]">
-                        {currentItems?.map(animal => <AnimalItem animal={animal} key={animal.name} />)}
-                    </div>
-                    <ListPagination
-                        currentPage={currentPage}
-                        setCurrentPage={setCurrentPage}
-                        pageNumbers={getPaginationNumbers()}
-                        totalPages={totalPages} />
-                </CardContent>
-            </Card>
+        <div className="relative min-h-[15rem]">
+            {(isLoading || !data) && <Loader />}
+            {data && (
+                <Card className="shadcn-card ">
+                    <CardHeader className="shadcn-card-header">
+                        <CardTitle>Animals List</CardTitle>
+                    </CardHeader>
+                    <CardContent className="shadcn-card-content">
+                        <div className="search-list mb-4 text-secondary h-[10rem]">
+                            {currentItems?.map(animal => <AnimalItem animal={animal} key={animal.name} />)}
+                        </div>
+                        <ListPagination
+                            currentPage={currentPage}
+                            setCurrentPage={setCurrentPage}
+                            pageNumbers={getPaginationNumbers()}
+                            totalPages={totalPages} />
+                    </CardContent>
+                </Card>
+            )}
         </div>
     );
 }
