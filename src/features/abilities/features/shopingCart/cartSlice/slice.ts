@@ -27,18 +27,21 @@ const cartSlice = createSlice({
     },
     removeAnimal(state, action: PayloadAction<string>) {
       const findIndex = state.items.findIndex(
-        (item) => item.animal.name === action.payload    
+        (item) => item.animal.name === action.payload,
       );
       if (findIndex >= 0) {
         state.items[findIndex].quantity -= 1;
         if (state.items[findIndex].quantity <= 0) {
-          console.log('im here')
-          state.items = state.items.filter((item) => item.animal.name !== action.payload);
+          state.items = state.items.filter(
+            (item) => item.animal.name !== action.payload,
+          );
         }
       }
     },
     removeAnimalCompletely(state, action: PayloadAction<string>) {
-      state.items = state.items.filter((item) => item.animal.name !== action.payload);
+      state.items = state.items.filter(
+        (item) => item.animal.name !== action.payload,
+      );
     },
     setAnimalQuantity(
       state,

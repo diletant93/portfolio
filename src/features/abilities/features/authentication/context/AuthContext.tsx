@@ -4,9 +4,9 @@ import { getCurrentUser } from "../services/authApi";
 import { useCustomToast } from "@/hooks/toast/useCustomToast";
 const INITIAL_STATE: AuthContextStateType = {
     isAuthenticated: false,
-    isCheckingAuth:false,
+    isCheckingAuth: false,
     user: null,
-    refreshAuth:async ()=> {}
+    refreshAuth: async () => { }
 }
 const AuthContext = createContext(INITIAL_STATE);
 function AuthProvider({ children }: { children: React.ReactNode }) {
@@ -15,37 +15,37 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
     const [isCheckingAuth, setIsCheckingAuth] = useState<boolean>(INITIAL_STATE.isCheckingAuth);
     const [sessionUser, setSessionUser] = useState<SessionUserType>(INITIAL_STATE.user);
 
-    const {errorToast} = useCustomToast()
+    const { errorToast } = useCustomToast()
 
     function logout() {
         setIsAuthenticated(false)
         setSessionUser(null)
     }
 
-    const getSessionUser = useCallback( async function () {
+    const getSessionUser = useCallback(async function () {
         try {
             setIsCheckingAuth(true)
-            console.log('i am here')
+
             const user = await getCurrentUser()
             if (user) {
-                console.log('i also went here , so we are logged in')
+
                 setIsAuthenticated(true)
                 setSessionUser(user)
             }
             else {
-                console.log('we are not logged in , logging out')
+
                 logout()
             }
 
-        } catch (error : unknown) {
-            if(error instanceof Error){
+        } catch (error: unknown) {
+            if (error instanceof Error) {
                 errorToast(error.message)
             }
             errorToast('Smth went wrong in the AuthProvider')
-        }finally{
+        } finally {
             setIsCheckingAuth(false)
         }
-    },[errorToast])
+    }, [errorToast])
     useEffect(() => {
         getSessionUser()
     }, [getSessionUser])
@@ -54,7 +54,7 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
         isAuthenticated,
         isCheckingAuth,
         user: sessionUser,
-        refreshAuth:getSessionUser
+        refreshAuth: getSessionUser
     }
     return (
         <AuthContext.Provider value={value}>

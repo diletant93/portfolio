@@ -1,5 +1,9 @@
 import { supabase } from "@/lib/supabase/config";
-import { SessionUserType, SignInUserType, SignUpUserType } from "../types/authTypes";
+import {
+  SessionUserType,
+  SignInUserType,
+  SignUpUserType,
+} from "../types/authTypes";
 
 export async function signUpUser({
   email,
@@ -19,7 +23,6 @@ export async function signUpUser({
     });
 
     if (signUpError || !user) {
-      console.log("Error while registering to the Users table");
       throw new Error("Could not register");
     }
 
@@ -34,12 +37,10 @@ export async function signUpUser({
       ])
       .select("*");
     if (profileError) {
-      console.log("Error while registering to the Profiles table");
       throw new Error("Could not register");
     }
     return data;
   } catch (error) {
-    console.log(error);
     throw error;
   }
 }
@@ -51,37 +52,32 @@ export async function signInUser({ email, password }: SignInUserType) {
       password,
     });
     if (error) {
-      console.log("Error while signing in");
       throw new Error("Could not sign in");
     }
     return data.user;
   } catch (error) {
-    console.log(error);
     throw error;
   }
 }
-export async function getCurrentUser (){
+export async function getCurrentUser() {
   try {
     const { data, error } = await supabase.auth.getUser();
     if (error) {
-      return
+      return;
     }
     return data.user as SessionUserType;
   } catch (error) {
-    console.log(error);
     throw error;
   }
 }
 
-export async function logoutUser(){
+export async function logoutUser() {
   try {
-    const {error} = await supabase.auth.signOut()
+    const { error } = await supabase.auth.signOut();
     if (error) {
-      console.log("Error while logging out");
       throw new Error("Could not log out");
     }
   } catch (error) {
-    console.log(error);
     throw error;
   }
 }
@@ -93,12 +89,10 @@ export async function checkUserExists(email: string) {
       .select("email")
       .eq("email", email);
     if (error) {
-      console.log("Error while checking if user exists");
       throw new Error("Could not check if user exists");
     }
     return data.length > 0;
   } catch (error) {
-    console.log("Error while checking if user exists");
     throw new Error("Could not check if user exists");
   }
 }

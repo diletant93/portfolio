@@ -1,19 +1,17 @@
-import { FormFieldType } from "../types/formTypes"
+import { FormFieldType } from "../types/formTypes";
 
 export function triggerField(
   e: React.ChangeEvent<HTMLInputElement>,
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
   trigger: (field: FormFieldType) => void,
   clearErrors: (field: FormFieldType) => void,
-  field: FormFieldType) {
+  field: FormFieldType,
+) {
+  onChange(e);
 
-  onChange(e)
-    console.log(field)
-    console.log(e.target.value)
   if (e.target.value.trim() !== "") {
-    trigger(field)
+    trigger(field);
   } else {
-    clearErrors(field)
+    clearErrors(field);
   }
-
 }
