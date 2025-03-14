@@ -3,8 +3,6 @@ import AnimalItem from "../../filter/components/AnimalItem";
 import { useInfiniteAnimals } from "../hooks/useInfiniteAnimals";
 import Loader from "@/components/Loader";
 import {useInView} from 'react-intersection-observer'
-import SmallLoader from "@/components/SmallLoader";
-
 export default function InfiniteScrollShowcase() {
     const {data , status, error, isFetchingNextPage, fetchNextPage, resetAnimalsIfCached} = useInfiniteAnimals()
 
@@ -30,7 +28,7 @@ export default function InfiniteScrollShowcase() {
                 ))}
                 </>
             ))}
-            <div ref={ref}>{isFetchingNextPage && <div className="flex-center py-5"><SmallLoader/></div>}</div>
+            <div ref={ref}>{isFetchingNextPage && <div className="flex-center py-10 relative"><Loader variation="small"/></div>}</div>
         </div>
     );
 }
