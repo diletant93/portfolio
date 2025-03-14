@@ -9,7 +9,7 @@ function useRegister() {
   const { isPending: isRegistering, mutateAsync: register } = useMutation({
     mutationFn: ({ fullName, email, password }: SignUpUserType) =>
       signUpUser({ fullName, email, password }),
-    onSuccess: (data) => {
+    onSuccess: () => {
       successToast("Registered");
     },
     onError: (error) => errorToast(error.message),
