@@ -37,7 +37,7 @@
     @apply mx-auto max-w-[80rem] border-secondary sm:border;
   }
   .content {
-    @apply flex h-[100vh] flex-col sm:h-[97vh];
+    @apply flex h-[100vh] flex-col md:h-[97vh];
   }
   .main {
     @apply flex-1 border-b border-b-secondary;
@@ -119,6 +119,10 @@
   .shadcn-button {
     @apply rounded-none border border-secondary bg-primary text-secondary transition-all duration-300 hover:bg-secondary hover:text-primary !important;
   }
+  /* Input */
+  .shadcn-input {
+    @apply rounded-none border border-secondary bg-primary text-secondary !important;
+  }
   /* abilities */
   .abilities-grid {
     /* the justify-center items-center is temporary*/
@@ -171,13 +175,21 @@
     @apply flex w-full flex-1 flex-shrink-0 flex-col items-center justify-items-center overflow-hidden;
   }
   .intro-item {
-    @apply flex w-full gap-5 flex-1 flex-col items-center justify-center px-10 md:gap-0 md:flex-row md:justify-between lg:w-2/3 lg:justify-between;
+    @apply flex w-full flex-1 flex-col items-center justify-center gap-5 px-10 md:flex-row md:justify-between md:gap-0 lg:w-2/3 lg:justify-between;
   }
   .spinning-circle {
     @apply absolute aspect-square h-2/3 origin-center animate-[spin_10s_linear_infinite] rounded-full border-2 border-dashed border-secondary bg-transparent;
   }
 }
 @layer utilities {
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 30px transparent inset !important;
+    -webkit-text-fill-color: rgba(var(--secondary), 1) !important;
+    transition: background-color 5000s ease-in-out 0s;
+    background-color: transparent !important;
+  }
   .flex-center {
     @apply flex items-center justify-center;
   }

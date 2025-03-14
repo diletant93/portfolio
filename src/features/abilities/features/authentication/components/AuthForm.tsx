@@ -77,6 +77,7 @@ export function AuthForm({ type }: AuthFormProps) {
                     triggerField(e, field.onChange, form.trigger, form.clearErrors, 'fullName')
                   }
                   onBlur={onInputBlur(field.onBlur)}
+                  className="shadcn-input"
                 />
               </FormControl>
               <FormMessage />
@@ -94,7 +95,9 @@ export function AuthForm({ type }: AuthFormProps) {
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                     triggerField(e, field.onChange, form.trigger, form.clearErrors, 'email')
                   }
-                  onBlur={onInputBlur(field.onBlur)} />
+                  onBlur={onInputBlur(field.onBlur)} 
+                  className="shadcn-input"
+                  />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -111,7 +114,9 @@ export function AuthForm({ type }: AuthFormProps) {
                   type="password"
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                     triggerField(e, field.onChange, form.trigger, form.clearErrors, 'password')}
-                  onBlur={onInputBlur(field.onBlur)} />
+                  onBlur={onInputBlur(field.onBlur)} 
+                    className="shadcn-input"
+                  />
               </FormControl>
               <FormMessage className="shadcn-form-message" />
             </FormItem>
@@ -129,7 +134,9 @@ export function AuthForm({ type }: AuthFormProps) {
                     type="password"
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                       triggerField(e, field.onChange, form.trigger, form.clearErrors, 'confirmPassword')}
-                    onBlur={onInputBlur(field.onBlur)} />
+                    onBlur={onInputBlur(field.onBlur)} 
+                      className="shadcn-input"
+                    />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -137,11 +144,11 @@ export function AuthForm({ type }: AuthFormProps) {
           />
         )}
         <div className="w-full flex flex-col gap-5 mt-5">
-          <Button type="submit" className="flex-1" disabled={isLoading}>
+          <Button type="submit" className="flex-1 shadcn-button" disabled={isLoading}>
             {isLoading ? 'Submitting...' : 'Submit'}
           </Button>
 
-          <Button type="button" className="flex-1" disabled={isLoading} onClick={onClearForm}>
+          <Button type="button" className="flex-1 shadcn-button" disabled={isLoading} onClick={onClearForm}>
             Clear
           </Button>
 

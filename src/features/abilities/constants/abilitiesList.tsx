@@ -53,7 +53,7 @@ export const subAbilitiesList: Ability[] = [
     },
     {
         name: 'Debounce',
-        heading: 'Input',
+        heading: 'Debounce',
         abilityCopmonent: <DebounceShowcase/>
     },
     {
