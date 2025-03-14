@@ -1,3 +1,5 @@
+import { transform } from "typescript";
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
@@ -15,7 +17,25 @@ export default {
         grotesk: ["Space Grotesk", "sans-serif"],
         sans: ["Space Grotesk", "sans-serif"],
       },
+      keyframes: {
+        scrollLeft: {
+          '0%':{
+            transform:'translate(50%)'
+          },
+          "100%": {
+            transform: "translateX(-50%)",
+          },
+        },
+        scrollRight: {
+          "0%": {
+            transform: "translateX(-50%)",
+          },
+          "100%": {
+            transform: "translateX(50%)",
+          },
+        },
+      },
     },
   },
-  plugins: ['tailwind-scrollbar'],
+  plugins: ["tailwind-scrollbar"],
 };

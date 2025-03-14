@@ -6,15 +6,12 @@ export default function useClickOutside<T extends HTMLElement = HTMLElement>(han
     const ref = useRef<T>(null)//we expect any type of HTMLELement so we could use it for any element\
     useEffect(()=>{
         const listener = (e:MouseEvent | TouchEvent) =>{
-            console.log('clicked')
             const target = e.target as Node
             if(!ref.current || ref.current.contains(target)){
-                console.log('clicked inside the if')
                 return // the idea is to wear this listener on the document element
                 //then if we click on the document element we will close the ref
                 //if we click on the ref then we won't close and just return
             }
-            console.log('here')
             handler(e)
         }
         document.addEventListener('mousedown',listener,capture)

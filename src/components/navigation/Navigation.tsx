@@ -1,4 +1,4 @@
-import { OpenStateProvider, useOpenState } from "@/context/OpenStateContext";
+import { useOpenState } from "@/context/OpenStateContext";
 import Burger from "./Burger";
 import DesktopNavigation from "./DesktopNavigation";
 import MobileNavigation from "./MobileNavigation";
@@ -9,12 +9,9 @@ import useClickOutside from "@/hooks/useClickOutside";
 export default function Navigation() {
   const matchesMediumDevices = useMediaQuery(MEDIA_QUERIES.MD)
 
-  const { isOpen, setIsOpen } = useOpenState()
-  const closeList = () => {
-    console.log('closed')
-    console.log('isOpen?:',isOpen)
-    setIsOpen(false)
-  }
+  const {setIsOpen } = useOpenState()
+  const closeList = () => setIsOpen(false)
+
   const ref = useClickOutside<HTMLDivElement>(closeList, false)
 
   return (
@@ -22,7 +19,7 @@ export default function Navigation() {
         {matchesMediumDevices ? (
           <DesktopNavigation />
         ) : (
-          <div ref={ref} className="bg-red-400">
+          <div ref={ref}>
             <div className="border-l border-l-secondary z-50">
               <Burger />
             </div>

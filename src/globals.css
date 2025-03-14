@@ -8,7 +8,7 @@
 .dark {
   --primary: 0, 0, 0;
   --secondary: 255, 255, 255;
-  --secondary-light: 100, 100,100;
+  --secondary-light: 100, 100, 100;
 }
 .light {
   --primary: 255, 255, 255;
@@ -19,8 +19,8 @@
   --primary: 252, 235, 3;
   --secondary: 36, 3, 252;
 }
-.active{
-  @apply bg-secondary text-primary
+.active {
+  @apply bg-secondary text-primary;
 }
 
 @layer base {
@@ -37,38 +37,38 @@
     @apply mx-auto max-w-[80rem] border-secondary sm:border;
   }
   .content {
-    @apply flex h-[100vh] sm:h-[97vh] flex-col;
+    @apply flex h-[100vh] flex-col sm:h-[97vh];
   }
   .main {
-    @apply flex-1 border-b border-b-secondary ;
+    @apply flex-1 border-b border-b-secondary;
   }
   .header {
     @apply relative z-20 flex items-center border-b border-b-secondary pl-5;
   }
   .footer {
-    @apply flex flex-wrap justify-between gap-5 px-5 pt-5 pb-1 ;
+    @apply flex flex-wrap justify-between gap-5 px-5 pb-1 pt-5;
   }
 
   /* Shadcn */
   /* Selector */
-  .shadcn-selector-trigger{
+  .shadcn-selector-trigger {
     @apply cursor-pointer rounded-none bg-primary px-2 py-4 font-bold uppercase text-secondary hover:bg-secondary hover:text-primary !important;
   }
-  .shadcn-selector-item{
-    @apply flex h-full gap-2 rounded-none border-none font-bold uppercase text-secondary hover:bg-secondary hover:text-primary cursor-pointer !important;
+  .shadcn-selector-item {
+    @apply flex h-full cursor-pointer gap-2 rounded-none border-none font-bold uppercase text-secondary hover:bg-secondary hover:text-primary !important;
   }
   .shadcn-header-selector-trigger {
     @apply flex h-full gap-2 rounded-none border-none font-bold uppercase text-secondary hover:bg-secondary hover:text-primary !important;
   }
   .shadcn-header-selector-item {
-    @apply cursor-pointer rounded-none bg-primary px-2 py-4 font-bold uppercase text-secondary hover:bg-secondary hover:text-primary border-b-2 border-b-secondary last:border-b-0 !important;
+    @apply cursor-pointer rounded-none border-b-2 border-b-secondary bg-primary px-2 py-4 font-bold uppercase text-secondary last:border-b-0 hover:bg-secondary hover:text-primary !important;
   }
-  .shadcn-header-selector-content{
-    @apply border-2 border-secondary rounded-none !important
+  .shadcn-header-selector-content {
+    @apply rounded-none border-2 border-secondary !important;
   }
   /* Dialog window */
   .shadcn-card-dialog-content {
-    @apply bg-primary max-w-[90vw] sm:max-w-[30rem] md:max-w-[40rem] lg:max-w-[45rem] !important;
+    @apply max-w-[90vw] bg-primary sm:max-w-[30rem] md:max-w-[40rem] lg:max-w-[45rem] !important;
   }
   /* Form */
   .shadcn-auth-form {
@@ -88,85 +88,94 @@
   .shadcn-error-toast {
     @apply border border-red-500 bg-red-500 text-secondary !important;
   }
-  .shadcn-success-toast{
+  .shadcn-success-toast {
     @apply border border-green-500 bg-green-500 text-secondary !important;
   }
   /* Button  */
   .shadcn-burger-button {
-    @apply border-0 bg-transparent px-4 py-4 flex-col h-full !important;
+    @apply h-full flex-col border-0 bg-transparent px-4 py-4 !important;
   }
   /* Card */
-  .shadcn-card{
-    @apply bg-primary border-none shadow-none flex flex-col gap-2 sm:block !important
+  .shadcn-card {
+    @apply flex flex-col gap-2 border-none bg-primary shadow-none sm:block !important;
   }
-  .shadcn-card-header{
-    @apply p-0 sm:p-2 bg-primary text-secondary border-none !important
+  .shadcn-card-header {
+    @apply border-none bg-primary p-0 text-secondary sm:p-2 !important;
   }
-  .shadcn-card-content{
-    @apply p-0 sm:p-4 bg-primary !important
+  .shadcn-card-content {
+    @apply bg-primary p-0 sm:p-4 !important;
   }
   /* Pagination */
-  .shadcn-pagination-button{
-    @apply bg-primary border border-secondary hover:bg-secondary hover:text-primary rounded-none cursor-pointer text-secondary !important
+  .shadcn-pagination-button {
+    @apply cursor-pointer rounded-none border border-secondary bg-primary text-secondary hover:bg-secondary hover:text-primary !important;
   }
-  .shadcn-pagination-button-active{
-    @apply bg-secondary text-primary !important
+  .shadcn-pagination-button-active {
+    @apply bg-secondary text-primary !important;
   }
-  .shadcn-pagination-ellipsis{
-    @apply bg-primary border border-secondary  rounded-none cursor-pointer text-secondary !important
+  .shadcn-pagination-ellipsis {
+    @apply cursor-pointer rounded-none border border-secondary bg-primary text-secondary !important;
   }
   /* Button */
-  .shadcn-button{
-    @apply bg-primary text-secondary border border-secondary transition-all duration-300 hover:bg-secondary hover:text-primary rounded-none !important
+  .shadcn-button {
+    @apply rounded-none border border-secondary bg-primary text-secondary transition-all duration-300 hover:bg-secondary hover:text-primary !important;
   }
   /* abilities */
   .abilities-grid {
     /* the justify-center items-center is temporary*/
-    @apply grid justify-items-center  md:grid-cols-[repeat(auto-fit,minmax(25rem,1fr))];
+    @apply grid justify-items-center md:grid-cols-[repeat(auto-fit,minmax(25rem,1fr))];
   }
-  .abilities-subgrid{
-    @apply auto-rows-fr
+  .abilities-subgrid {
+    @apply auto-rows-fr;
   }
-  .abilities-maingrid{
-    @apply lg:auto-rows-[15rem]  md:auto-rows-[10rem] auto-rows-[8rem]
+  .abilities-maingrid {
+    @apply auto-rows-[8rem] md:auto-rows-[10rem] lg:auto-rows-[15rem];
   }
   .ability-preview {
-    @apply bg-primary h-full border border-secondary hover:scale-105 transition-all duration-300 flex-center;
+    @apply flex-center h-full border border-secondary bg-primary transition-all duration-300 hover:scale-105;
   }
   /* search list */
-  .search-list{
-    @apply overflow-y-auto custom-scrollbar p-1 pr-3 border border-secondary rounded-sm relative
+  .search-list {
+    @apply custom-scrollbar relative overflow-y-auto rounded-sm border border-secondary p-1 pr-3;
   }
   /* showcase */
-  .showcase{
-    @apply h-[15rem]
+  .showcase {
+    @apply h-[15rem];
   }
   /* custom scrollbar */
   .custom-scrollbar::-webkit-scrollbar {
-    @apply w-2 rounded-xl p-1
+    @apply w-2 rounded-xl p-1;
   }
   .custom-scrollbar::-webkit-scrollbar-track {
-    @apply bg-transparent
+    @apply bg-transparent;
   }
   .custom-scrollbar::-webkit-scrollbar-thumb {
-    @apply bg-secondary rounded-md
+    @apply rounded-md bg-secondary;
   }
   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    @apply bg-[#8f8f8f]
+    @apply bg-[#8f8f8f];
   }
   /* recharts */
   .custom-tooltip {
-    @apply bg-transparent text-secondary p-4 shadow-lg border border-secondary;
+    @apply border border-secondary bg-transparent p-4 text-secondary shadow-lg;
   }
-  
+
   .tooltip-label {
-    @apply font-bold text-lg mb-2;
+    @apply mb-2 text-lg font-bold;
   }
-  
+
   .tooltip-item {
     @apply text-base leading-relaxed;
   }
-  
+  /* introSection */
+  .intro-section {
+    @apply flex w-full flex-1 flex-shrink-0 flex-col items-center justify-items-center overflow-hidden;
+  }
+  .intro-item {
+    @apply flex w-full gap-5 flex-1 flex-col items-center justify-center px-10 md:gap-0 md:flex-row md:justify-between lg:w-2/3 lg:justify-between;
+  }
+  .spinning-circle {
+    @apply absolute aspect-square h-2/3 origin-center animate-[spin_10s_linear_infinite] rounded-full border-2 border-dashed border-secondary bg-transparent;
+  }
 }
 @layer utilities {
   .flex-center {
@@ -178,7 +187,7 @@
   .h2 {
     @apply text-lg font-bold text-secondary sm:text-2xl lg:text-3xl;
   }
-  .h3{
+  .h3 {
     @apply text-base font-bold text-secondary sm:text-xl lg:text-2xl;
   }
 }
