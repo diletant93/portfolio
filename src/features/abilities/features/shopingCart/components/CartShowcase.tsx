@@ -18,7 +18,7 @@ export default function CartShowcase() {
                     <AnimalsList animals={animals} />
                     {isLoading ? <Loader /> : <Separator />}
                     <div className="flex-1 overflow-y-auto custom-scrollbar [direction:rtl]">
-                        <Cart />
+                        <Cart isLoading={isLoading}/>
                     </div>
                 </div>
                 <CartTotal />
@@ -42,7 +42,7 @@ export default function CartShowcase() {
                     <TabsContent value="cart" className="w-full">
                         <div className="flex md:flex-row flex-col md:h-[15rem] h-[40vh]">
                             <div className="flex-1 overflow-y-auto custom-scrollbar [direction:rtl]">
-                                <Cart />
+                                <Cart isLoading={isLoading} />
                             </div>
                         </div>
                     </TabsContent>

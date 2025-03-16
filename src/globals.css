@@ -125,7 +125,7 @@
   }
   /* Tabs */
   .shadcn-tabs{
-    @apply w-full flex-center flex-col gap-1 !important;
+    @apply w-full flex-center flex-col gap-1 bg-transparent !important;
   }
   .shadcn-tabs-list {
     @apply flex gap-1 bg-transparent w-4/5 !important;
@@ -134,7 +134,7 @@
     @apply flex-1 rounded-none border border-secondary bg-primary text-secondary transition-all duration-300 hover:bg-secondary hover:text-primary !important;
   }
   .shadcn-tabs-trigger[data-state="active"] {
-    @apply tracking-widest;
+    @apply bg-secondary text-primary !important;
   }
   /* abilities */
   .abilities-grid {

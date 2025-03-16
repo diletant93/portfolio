@@ -2,8 +2,9 @@ import { useSelector } from "react-redux";
 import { selectItems } from "../cartSlice/selectors";
 import AnimalCartItem from "./AnimalCartItem";
 
-export default function Cart() {
+export default function Cart({isLoading}:{isLoading:boolean}) {
     const items = useSelector(selectItems);
+    if(isLoading) return null
     if(items.length <= 0){
         return <div className="w-full h-full flex-center">The cart is empty</div>
     }
