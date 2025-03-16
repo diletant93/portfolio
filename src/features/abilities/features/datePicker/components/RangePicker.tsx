@@ -33,6 +33,7 @@ export default function RangePicker() {
                     nav_button: "h-7 w-7 bg-primary border border-secondary flex-center hover:bg-secondary hover:text-primary text-xl ",
                     cell: 'cursor-pointer',
                     day_selected: 'border border-secondary rounded-none',
+                    table: 'border-collapse-separate border-spacing-1 md:border-spacing-2',
                 }}
                 selected={dateRange}
                 onSelect={(dateRange) => setDateRange(dateRange)}

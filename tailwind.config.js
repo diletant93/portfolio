@@ -5,6 +5,10 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      borderSpacing: {
+        '1': '0.25rem',
+        '2': '0.5rem',
+      },
       colors: {
         primary: "rgba(var(--primary))",
         secondary: {
