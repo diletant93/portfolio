@@ -47,7 +47,7 @@ export default function Controls<T extends Controllable>({
     if (!item.quantity) item.quantity = 1
 
     return (
-        <div className="flex gap-2 items-center ">
+        <div className="flex gap-2 items-center justify-center md:justify-normal">
             <Button className="shadcn-button" onClick={handleDecrease}>-</Button>
             <Input
                 type="number"
