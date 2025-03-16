@@ -62,6 +62,7 @@ export const subAbilitiesList: Ability[] = [
     },
     {
         name: 'Cart',
+        heading:'Cart',
         abilityCopmonent: <CartShowcase/>
     },
     {

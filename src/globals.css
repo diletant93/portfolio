@@ -107,7 +107,7 @@
   }
   /* Pagination */
   .shadcn-pagination-button {
-    @apply cursor-pointer rounded-none border border-secondary bg-primary text-secondary hover:bg-secondary hover:text-primary !important;
+    @apply w-full cursor-pointer rounded-none border border-secondary bg-primary px-4 text-secondary hover:bg-secondary hover:text-primary md:w-auto md:flex-grow-0 !important;
   }
   .shadcn-pagination-button-active {
     @apply bg-secondary text-primary !important;
@@ -123,15 +123,25 @@
   .shadcn-input {
     @apply rounded-none border border-secondary bg-primary text-secondary !important;
   }
+  /* Tabs */
+  .shadcn-tabs-list {
+    @apply flex  gap-1 bg-primary w-4/5 !important;
+  }
+  .shadcn-tabs-trigger {
+    @apply flex-1 rounded-none border border-secondary bg-primary text-secondary transition-all duration-300 hover:bg-secondary hover:text-primary !important;
+  }
+  .shadcn-tabs-trigger[data-state="active"] {
+    @apply tracking-widest;
+  }
   /* abilities */
   .abilities-grid {
-    @apply grid justify-items-center grid-cols-3 md:grid-cols-[repeat(auto-fit,minmax(20rem,1fr))];
+    @apply grid grid-cols-3 justify-items-center md:grid-cols-[repeat(auto-fit,minmax(20rem,1fr))];
   }
   .abilities-subgrid {
     @apply h-full;
   }
   .abilities-maingrid {
-    @apply grid-cols-2 h-full;
+    @apply h-full grid-cols-2;
   }
   .ability-preview {
     @apply flex-center h-full border border-secondary bg-primary transition-all duration-300 hover:scale-105;
@@ -171,10 +181,10 @@
   }
   /* introSection */
   .intro-section {
-    @apply flex w-full gap-5 flex-1 flex-shrink-0 flex-col items-center justify-items-center overflow-hidden pt-5;
+    @apply flex w-full flex-1 flex-shrink-0 flex-col items-center justify-items-center gap-5 overflow-hidden pt-5;
   }
   .intro-item {
-    @apply flex w-full flex-1 flex-col items-center justify-center gap-5 md:px-10 px-5 md:flex-row md:justify-between md:gap-0 lg:w-2/3 lg:justify-between;
+    @apply flex w-full flex-1 flex-col items-center justify-center gap-5 px-5 md:flex-row md:justify-between md:gap-0 md:px-10 lg:w-2/3 lg:justify-between;
   }
   .spinning-circle {
     @apply absolute aspect-square h-2/3 origin-center animate-[spin_10s_linear_infinite] rounded-full border-2 border-dashed border-secondary bg-transparent;

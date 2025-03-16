@@ -43,3 +43,18 @@ export function abbreviateName(input: string): string {
  export function capitalizeFirstLetter(word: string): string {
   return word.charAt(0).toUpperCase() + word.slice(1);
 }
+export function formatAgeRange(input: string): string {
+  const matches = input?.match(/\d+/g);
+  if (!matches || matches.length === 0) {
+    return ''
+  }
+
+  // If there's a single number, return it in the desired format
+  if (matches.length === 1) {
+    return `${matches[0]} y.`;
+  }
+
+  // If there are at least two numbers, use the first two as the range
+  const [min, max] = matches;
+  return `${min} - ${max} y.`;
+}

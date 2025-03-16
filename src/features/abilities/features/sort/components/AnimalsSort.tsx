@@ -16,7 +16,7 @@ type AnimalsSortProps = {
 export default function AnimalsSort({option, setOption, className}:AnimalsSortProps) {
   return (
     <Select value={option} onValueChange={(value:string) => setOption(value)}>
-    <SelectTrigger className={cn("max-w-[30%] shadcn-selector-trigger", className)}>
+    <SelectTrigger className={cn("md:max-w-[30%] shadcn-selector-trigger", className)}>
       <SelectValue placeholder="name-desc" />
     </SelectTrigger>
     <SelectContent>
