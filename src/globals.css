@@ -124,8 +124,11 @@
     @apply rounded-none border border-secondary bg-primary text-secondary !important;
   }
   /* Tabs */
+  .shadcn-tabs{
+    @apply w-full flex-center flex-col gap-1 !important;
+  }
   .shadcn-tabs-list {
-    @apply flex  gap-1 bg-transparent w-4/5 !important;
+    @apply flex gap-1 bg-transparent w-4/5 !important;
   }
   .shadcn-tabs-trigger {
     @apply flex-1 rounded-none border border-secondary bg-primary text-secondary transition-all duration-300 hover:bg-secondary hover:text-primary !important;
@@ -144,7 +147,7 @@
     @apply h-full grid-cols-2;
   }
   .ability-preview {
-    @apply flex-center h-full border border-secondary bg-primary transition-all duration-300 hover:scale-105;
+    @apply flex-center h-full border border-secondary bg-primary transition-all duration-300 hover:scale-105 p-1;
   }
   /* search list */
   .search-list {

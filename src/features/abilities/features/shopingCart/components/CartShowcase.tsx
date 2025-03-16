@@ -29,7 +29,7 @@ export default function CartShowcase() {
         return (
             <div className="flex flex-col gap-4">
                 {isLoading ? <Loader /> : matched ? <Separator /> : null}
-                <Tabs defaultValue="animals" className="w-full flex-center flex-col gap-1">
+                <Tabs defaultValue="animals" className="shadcn-tabs">
                     <TabsList className="shadcn-tabs-list">
                         <TabsTrigger value="animals" className="shadcn-tabs-trigger">Animals</TabsTrigger>
                         <TabsTrigger value="cart" className="shadcn-tabs-trigger">Cart</TabsTrigger>
