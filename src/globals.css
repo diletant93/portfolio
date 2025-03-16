@@ -125,7 +125,7 @@
   }
   /* Tabs */
   .shadcn-tabs-list {
-    @apply flex  gap-1 bg-primary w-4/5 !important;
+    @apply flex  gap-1 bg-transparent w-4/5 !important;
   }
   .shadcn-tabs-trigger {
     @apply flex-1 rounded-none border border-secondary bg-primary text-secondary transition-all duration-300 hover:bg-secondary hover:text-primary !important;

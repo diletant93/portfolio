@@ -34,7 +34,7 @@ export default function CartShowcase() {
                         <TabsTrigger value="animals" className="shadcn-tabs-trigger">Animals</TabsTrigger>
                         <TabsTrigger value="cart" className="shadcn-tabs-trigger">Cart</TabsTrigger>
                     </TabsList>
-                    <TabsContent value="animals" className="w-full">
+                    <TabsContent value="animals" className="w-full sm:translate-x-0 -translate-x-1">
                         <div className="flex md:flex-row flex-col md:h-[15rem] h-[40vh]">
                             <AnimalsList animals={animals} />
                         </div>
