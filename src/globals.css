@@ -125,14 +125,13 @@
   }
   /* abilities */
   .abilities-grid {
-    /* the justify-center items-center is temporary*/
-    @apply grid justify-items-center md:grid-cols-[repeat(auto-fit,minmax(25rem,1fr))];
+    @apply grid justify-items-center grid-cols-3 md:grid-cols-[repeat(auto-fit,minmax(20rem,1fr))];
   }
   .abilities-subgrid {
-    @apply auto-rows-fr;
+    @apply h-full;
   }
   .abilities-maingrid {
-    @apply auto-rows-[8rem] md:auto-rows-[10rem] lg:auto-rows-[15rem];
+    @apply grid-cols-2 h-full;
   }
   .ability-preview {
     @apply flex-center h-full border border-secondary bg-primary transition-all duration-300 hover:scale-105;
