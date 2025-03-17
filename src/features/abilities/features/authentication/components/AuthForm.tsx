@@ -78,6 +78,7 @@ export function AuthForm({ type }: AuthFormProps) {
                   }
                   onBlur={onInputBlur(field.onBlur)}
                   className="shadcn-input"
+                  autoComplete="name"
                 />
               </FormControl>
               <FormMessage />
@@ -97,6 +98,7 @@ export function AuthForm({ type }: AuthFormProps) {
                   }
                   onBlur={onInputBlur(field.onBlur)} 
                   className="shadcn-input"
+                  autoComplete="email"
                   />
               </FormControl>
               <FormMessage />
@@ -116,6 +118,7 @@ export function AuthForm({ type }: AuthFormProps) {
                     triggerField(e, field.onChange, form.trigger, form.clearErrors, 'password')}
                   onBlur={onInputBlur(field.onBlur)} 
                     className="shadcn-input"
+                    autoComplete={type === 'registration'? 'new-password' :'current-password'}
                   />
               </FormControl>
               <FormMessage className="shadcn-form-message" />
@@ -136,6 +139,7 @@ export function AuthForm({ type }: AuthFormProps) {
                       triggerField(e, field.onChange, form.trigger, form.clearErrors, 'confirmPassword')}
                     onBlur={onInputBlur(field.onBlur)} 
                       className="shadcn-input"
+                      autoComplete="new-password"
                     />
                 </FormControl>
                 <FormMessage />

@@ -21,12 +21,12 @@ export default function InfiniteScrollShowcase() {
     if (status === 'pending' || !data) return <div className="h-[15rem]"><Loader /></div>
     return (
         <div className="search-list h-[15rem]">
-            {data.pages.map((page) => (
-                <>
-                    {page.data.map((animal) => (
-                        <AnimalItem key={animal.name} animal={animal} />
+            {data.pages.map((page, index) => (
+                <div key={`item-${index}`} className="border-b border-b-secondary last:border-b-0">
+                    {page.data.map((animal, index) => (
+                        <AnimalItem key={`item-${index}`} animal={animal} />
                     ))}
-                </>
+                </div>
             ))}
             <div ref={ref}>{isFetchingNextPage && <div className="flex-center py-10 relative"><Loader variation="small" /></div>}</div>
         </div>
