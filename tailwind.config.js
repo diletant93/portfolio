@@ -15,6 +15,9 @@ export default {
           DEFAULT: "rgba(var(--secondary))",
           light: "rgba(var(--secondary-light))",
         },
+        socials:{
+          github:'#26a641',
+        },
         grey: "rgba(var(--grey))",
       },
       fontFamily: {
