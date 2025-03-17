@@ -8,14 +8,14 @@ export default function ProjectCard({ project }: { project: ProjectEntity }) {
       target="_blank"
       className="group relative flex-1 bg-primary outline outline-secondary outline-2 rounded-sm shadow-md hover:shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300 cursor-pointer"
     >
-      <div className="relative w-full h-40 overflow-hidden">
+      <div className="relative w-full h-60 overflow-hidden">
         <img
           src={project.imgUrl}
           alt={project.title}
           className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-secondary opacity-70 flex items-center justify-center transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-          <span className="text-primary text-lg">View Project</span>
+          <span className="text-primary text-2xl uppercase">View Project</span>
         </div>
       </div>
       <div className="p-4">
