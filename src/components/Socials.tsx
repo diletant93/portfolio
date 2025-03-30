@@ -12,7 +12,7 @@ export default function Socials() {
   return (
     <ul className="flex gap-2">
       <li>
-        <Link to='https://www.facebook.com/' target="_blank">
+        <Link to='https://www.facebook.com/profile.php?id=61574617871314' target="_blank">
           <FacebookIcon className={cn(socialStyles, hoverStyles['facebook'])} />
         </Link>
       </li>
