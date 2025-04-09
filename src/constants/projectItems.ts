@@ -6,7 +6,7 @@ export type ProjectEntity = {
 
 export const projectsArray: ProjectEntity[] = [
   {
-    imgUrl: "storeit_photo.jpg",
+    imgUrl: "storeit_photo.png",
     title: "StoreIt",
     projectUrl: "https://store-it-sable-psi.vercel.app/",
   },
@@ -21,8 +21,8 @@ export const projectsArray: ProjectEntity[] = [
     projectUrl: "https://wildoasis-nine.vercel.app/",
   },
   {
-    imgUrl: "wild_oasis.png",
-    title: "The Wild Oasis",
+    imgUrl: "the_authentication.png",
+    title: "The Authentication",
     projectUrl: "https://wildoasis-nine.vercel.app/",
   },
 ];
