@@ -37,7 +37,10 @@
     @apply mx-auto max-w-[80rem] border-secondary sm:border;
   }
   .content {
-    @apply flex h-[100vh] flex-col md:h-[97vh];
+    @apply flex h-[96.5vh] flex-col ;
+  }
+  .content:has(.main .bio){
+    @apply flex h-full flex-col ;
   }
   .main {
     @apply flex-1 border-b border-b-secondary;

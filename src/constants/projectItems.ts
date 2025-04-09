@@ -20,4 +20,9 @@ export const projectsArray: ProjectEntity[] = [
     title: "The Wild Oasis",
     projectUrl: "https://wildoasis-nine.vercel.app/",
   },
+  {
+    imgUrl: "wild_oasis.png",
+    title: "The Wild Oasis",
+    projectUrl: "https://wildoasis-nine.vercel.app/",
+  },
 ];

@@ -5,7 +5,7 @@ import PageTitle from "@/components/PageTitle";
 
 export default function Bio() {
   return (
-    <section className="h-full flex flex-col">
+    <section className="bio h-full flex flex-col">
       <PageTitle>My Journey</PageTitle>
       <div className="grid grid-cols-1 md:grid-cols-2 auto-row-[minmax(auto,50%)] px-5 pb-5 md:p-10  justify-items-center flex-1">
         <Education />

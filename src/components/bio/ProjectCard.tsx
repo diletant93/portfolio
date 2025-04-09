@@ -6,7 +6,7 @@ export default function ProjectCard({ project }: { project: ProjectEntity }) {
     <Link
       to={project.projectUrl}
       target="_blank"
-      className="group relative flex-1 bg-primary outline outline-secondary outline-2 rounded-sm shadow-md hover:shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300 cursor-pointer"
+      className="flex flex-col group relative flex-1 bg-primary outline outline-secondary outline-2 rounded-sm shadow-md hover:shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300 cursor-pointer"
     >
       <div className="relative w-full h-60 overflow-hidden">
         <img
@@ -18,7 +18,7 @@ export default function ProjectCard({ project }: { project: ProjectEntity }) {
           <span className="text-primary text-2xl uppercase">View Project</span>
         </div>
       </div>
-      <div className="p-4">
+      <div className="p-4 flex-1 flex-center">
         <h4 className="text-center font-semibold text-secondary">
           {project.title}
         </h4>
