@@ -14,7 +14,7 @@ export default function ProjectCard({ project }: { project: ProjectEntity }) {
           alt={project.title}
           className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-secondary opacity-70 flex items-center justify-center transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+        <div className="absolute inset-0 bg-secondary opacity-100 flex items-center justify-center transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
           <span className="text-primary text-2xl uppercase">View Project</span>
         </div>
       </div>
