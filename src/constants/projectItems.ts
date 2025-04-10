@@ -23,6 +23,6 @@ export const projectsArray: ProjectEntity[] = [
   {
     imgUrl: "the_authentication.png",
     title: "The Authentication",
-    projectUrl: "https://wildoasis-nine.vercel.app/",
+    projectUrl: "https://auth-lac-six.vercel.app/",
   },
 ];

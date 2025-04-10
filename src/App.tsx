@@ -12,7 +12,7 @@ const PageNotFound = lazy(() => import('./components/PageNotFound'));
 function App() {
   useThemeMode();
   return (
-    <Suspense fallback={<div className="h-[100vh] w-full flex-center"><Loader /></div>}>
+    <Suspense fallback={<div className="h-[100vh] w-full"><Loader /></div>}>
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<Home />} />
